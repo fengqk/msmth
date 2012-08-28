@@ -5,7 +5,7 @@ mSMTH
 
 开发环境：
 JDK r7u1
-Eclipse Juno for JEE r4.2 
+Eclipse Juno for JEE r4.2
 Android SDK Tools r20.0.3
 Eclipse ADT Plugin r20.0.3
 
