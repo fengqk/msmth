@@ -4,10 +4,10 @@ mSMTH
 这是一款基于微博用户浏览习惯的水木社区移动客户端
 
 开发环境：
-JDK r7u1
-Eclipse Juno for JEE r4.2
-Android SDK Tools r20.0.3
-Eclipse ADT Plugin r20.0.3
+1.JDK r7u1  
+2.Eclipse Juno for JEE r4.2   
+3.Android SDK Tools r20.0.3   
+4.Eclipse ADT Plugin r20.0.3  
 
 v0.0.1 目标功能：
 
