@@ -11,7 +11,7 @@ v0.0.1 目标功能：
 
 前期需求先这么多，会根据技术的调研程度逐渐增加，目前已有水木移动客户端：
 aSM（http://code.google.com/p/asm-android-client-for-newsmth/），
-iSM（http://itunes.apple.com/us/app/ismth/id497227445?mt=8）等等；
+iSM（http://itunes.apple.com/us/app/ismth/id497227445?mt=8），等等；
 
 不过这些应用貌似都是基于传统BBS浏览习惯，所以才有了我这样的想法，根据我的浏览习惯，上水木一般只关注十大和我关注的版面，
 来回切换版面感觉还是比较烦人的，所以才会想起微博那样的浏览方式。
