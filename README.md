@@ -3,7 +3,7 @@ mSMTH
 
 这是一款基于微博用户浏览习惯的水木社区移动客户端
 
-开发环境：
+开发环境：  
 1.JDK r7u1  
 2.Eclipse Juno for JEE r4.2   
 3.Android SDK Tools r20.0.3   
