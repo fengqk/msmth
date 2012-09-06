@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="login_enter" />
+    <item type="id" name="login_guest" />
+    <item type="id" name="navbar_home" />
+    <item type="id" name="navbar_hot" />
+    <item type="id" name="navbar_msg" />
+    <item type="id" name="navbar_search" />
+    <item type="id" name="navbar_more" />
+    <item type="id" name="topbar_back" />
+    <item type="id" name="topbar_post" />
+    <item type="id" name="topbar_send" />
+    <item type="id" name="topbar_refresh" />
+    <item type="id" name="msg_at" />
+    <item type="id" name="msg_mail" />
+    <item type="id" name="msg_reply" />
+    <item type="id" name="msg_notify" />
+    <item type="id" name="post_reply" />
+    <item type="id" name="post_forward" />
+    <item type="id" name="post_fav" />
+    <item type="id" name="post_unfav" />
+    <item type="id" name="post_refresh" />
+    <item type="id" name="post_more" />
+</resources>
