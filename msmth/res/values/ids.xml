@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <item type="id" name="login_input" />
     <item type="id" name="login_enter" />
     <item type="id" name="login_guest" />
     <item type="id" name="navbar_home" />
