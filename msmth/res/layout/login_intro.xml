@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="0dip"
+    android:layout_margin="5dp" 
+    android:layout_weight="1" >
+    
+    <!-- website link -->
+    <TextView
+        android:id="@id/text_website_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_website_link"
+        android:textSize="10dp"
+        android:textColor="@color/slategray"
+        android:textColorLink="@color/mediumslateblue" />
+
+    <!-- website logo -->
+    <ImageView
+        android:id="@id/image_website_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/website_logo" />
+
+</RelativeLayout>

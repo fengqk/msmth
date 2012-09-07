@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/navbar"
+    android:orientation="horizontal" >
+    
+    <!-- home -->
+    <Button
+        android:id = "button_navbar_home"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="@string/label_navbar_home"
+	    android:drawableTop="@drawable/navbar_home"
+        style="?android:attr/borderlessButtonStyle" />
+
+    <!-- hot -->
+    <Button
+        android:id = "button_navbar_hot"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="@string/label_navbar_hot"
+	    android:drawableTop="@drawable/navbar_hot" 
+	    style="?android:attr/borderlessButtonStyle" />    
+    
+    <!-- msg -->
+    <Button
+        android:id = "button_navbar_msg"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="@string/label_navbar_msg"
+	    android:drawableTop="@drawable/navbar_msg" 
+	    style="?android:attr/borderlessButtonStyle" />  
+    
+    <!-- search -->
+    <Button
+        android:id = "button_navbar_search"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="@string/label_navbar_search"
+	    android:drawableTop="@drawable/navbar_search" 
+	    style="?android:attr/borderlessButtonStyle" />  
+    
+    <!-- more -->
+    <Button
+        android:id = "button_navbar_more"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="@string/label_navbar_more"
+	    android:drawableTop="@drawable/navbar_more" 
+	    style="?android:attr/borderlessButtonStyle" />  
+	    
+</LinearLayout>

@@ -6,110 +6,18 @@
     android:orientation="vertical" >
     
     <!-- user input area -->
-    <RelativeLayout
+    <include 
         android:id="@id/layout_login_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@color/papayawhip"
-        android:padding="10dp" >
-        
-        <!-- user name -->
-        <TextView
-            android:id="@id/text_login_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="5dp"
-            android:text="@string/label_login_name" />
-
-        <EditText
-            android:id="@id/edit_login_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/text_login_name"
-            android:inputType="text"
-            android:singleLine="true" />
-        
-        <!-- user pass -->
-        <TextView
-            android:id="@id/text_login_pass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/edit_login_name"
-            android:layout_marginTop="5dp"
-            android:text="@string/label_login_pass" />
-
-        <EditText
-            android:id="@id/edit_login_pass"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/text_login_pass"
-            android:inputType="textPassword"
-            android:singleLine="true" />
-        
-    </RelativeLayout>
+        layout="@layout/login_input" />
     
     <!-- user click area -->
-    <RelativeLayout
+    <include 
         android:id="@id/layout_login_click"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@color/papayawhip"
-        android:padding="10dp" >
-        
-        <!-- enter -->
-        <Button
-            android:id="@id/button_login_enter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/login_enter"
-            android:text="@string/label_login_enter" />
-
-        <!-- guest -->
-        <Button
-            android:id="@id/button_login_guest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/login_guest"
-            android:text="@string/label_login_guest" />
-        
-    </RelativeLayout>
+        layout="@layout/login_click" />
     
-    <!-- website info -->
-    <RelativeLayout
-        android:id="@id/layout_website_info"
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_margin="5dp" 
-        android:layout_weight="1" >
-
-        <!-- website link -->
-        <TextView
-            android:id="@id/text_website_link"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_website_link"
-            android:textSize="10dp"
-            android:textColor="@color/slategray"
-            android:textColorLink="@color/mediumslateblue" />
-
-        <!-- website logo -->
-        <ImageView
-            android:id="@id/image_website_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="5dp"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/website_logo" />
-        
-    </RelativeLayout>
+    <!-- user intro area -->
+    <include 
+        android:id="@id/layout_login_intro"
+        layout="@layout/login_intro" />
     
 </LinearLayout>

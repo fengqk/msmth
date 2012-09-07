@@ -4,7 +4,7 @@
     <!-- layout -->
     <item type="id" name="layout_login_input" />
     <item type="id" name="layout_login_click" />
-    <item type="id" name="layout_website_info" />
+    <item type="id" name="layout_login_intro" />
     
     <!-- text view -->
     <item type="id" name="text_login_name" />

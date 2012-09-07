@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@color/papayawhip"
+    android:padding="10dp" >
+    
+    <!-- enter -->
+    <Button
+        android:id="@id/button_login_enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/login_enter"
+        android:text="@string/label_login_enter" />
+
+    <!-- guest -->
+    <Button
+        android:id="@id/button_login_guest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/login_guest"
+        android:text="@string/label_login_guest" />
+
+</RelativeLayout>
