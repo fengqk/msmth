@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/layout_topbar_hot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:background="@drawable/topbar" >
+    
+    <!-- back -->
+    <ImageButton
+        android:id="@id/button_topbar_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/topbar_back" 
+        android:contentDescription="@string/app_name" />
+    
+    <!-- refresh -->
+    <ImageButton
+        android:id="@id/button_topbar_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/topbar_refresh" 
+        android:contentDescription="@string/app_name" />
+    
+</RelativeLayout>

@@ -5,45 +5,45 @@
     android:background="@drawable/navbar"
     android:orientation="horizontal" >
     
-    <!-- home -->
+    <!-- home page-->
     <Button
-        android:id = "button_navbar_home"
+        android:id = "@id/button_navbar_home"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:text="@string/label_navbar_home"
 	    android:drawableTop="@drawable/navbar_home"
         style="?android:attr/borderlessButtonStyle" />
 
-    <!-- hot -->
+    <!-- hot page-->
     <Button
-        android:id = "button_navbar_hot"
+        android:id = "@id/button_navbar_hot"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:text="@string/label_navbar_hot"
 	    android:drawableTop="@drawable/navbar_hot" 
 	    style="?android:attr/borderlessButtonStyle" />    
     
-    <!-- msg -->
+    <!-- msg page-->
     <Button
-        android:id = "button_navbar_msg"
+        android:id = "@id/button_navbar_msg"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:text="@string/label_navbar_msg"
 	    android:drawableTop="@drawable/navbar_msg" 
 	    style="?android:attr/borderlessButtonStyle" />  
     
-    <!-- search -->
+    <!-- search page-->
     <Button
-        android:id = "button_navbar_search"
+        android:id = "@id/button_navbar_search"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:text="@string/label_navbar_search"
 	    android:drawableTop="@drawable/navbar_search" 
 	    style="?android:attr/borderlessButtonStyle" />  
     
-    <!-- more -->
+    <!-- more page-->
     <Button
-        android:id = "button_navbar_more"
+        android:id = "@id/button_navbar_more"
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:text="@string/label_navbar_more"

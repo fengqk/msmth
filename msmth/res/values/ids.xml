@@ -5,11 +5,14 @@
     <item type="id" name="layout_login_input" />
     <item type="id" name="layout_login_click" />
     <item type="id" name="layout_login_intro" />
+    <item type="id" name="layout_topbar_home" />
+    <item type="id" name="layout_topbar_hot" />
     
     <!-- text view -->
     <item type="id" name="text_login_name" />
     <item type="id" name="text_login_pass" />
     <item type="id" name="text_website_link" />
+    <item type="id" name="text_user_name" />
     
     <!-- edit text -->
     <item type="id" name="edit_login_name" />
