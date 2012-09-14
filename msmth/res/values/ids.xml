@@ -6,7 +6,9 @@
     <item type="id" name="layout_login_input" />
     <item type="id" name="layout_login_click" />
     <item type="id" name="layout_login_intro" />
+    <item type="id" name="layout_main" />
     <item type="id" name="layout_main_navbar" />
+    <item type="id" name="layout_main_topbar" />
     <item type="id" name="layout_topbar_home" />
     <item type="id" name="layout_topbar_hot" />
     

@@ -1,12 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@android:id/tabhost"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/layout_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
     
-    <!-- navbar area -->
-    <include
-        android:id="@id/layout_main_navbar"
-        layout="@layout/main_navbar" />
+    <TabHost
+	    android:id="@android:id/tabhost"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent" >
+    
+	    <RelativeLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" >
+	        
+	        <LinearLayout
+	            android:id="@id/layout_main_topbar"
+	            android:orientation="vertical"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentTop="true" />
+	        
+	        <FrameLayout
+	            android:id="@android:id/tabcontent"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent" 
+	            android:layout_above="@android:id/tabs"
+	            android:layout_below="@id/layout_main_topbar" />
+	           
+	        <TabWidget
+	            android:id="@android:id/tabs"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentBottom="true"
+	            android:background="@drawable/navbar" />
+	        
+	    </RelativeLayout>
 
-</TabHost>
+    </TabHost>
+ 
+</LinearLayout>

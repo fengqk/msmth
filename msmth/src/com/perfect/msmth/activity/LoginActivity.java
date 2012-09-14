@@ -1,4 +1,4 @@
-package com.perfect.msmth;
+package com.perfect.msmth.activity;
 
 import android.app.Activity;
 
