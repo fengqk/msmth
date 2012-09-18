@@ -1,9 +1,7 @@
 <resources>
 
-    <string name="app_name">msmth</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">水木微博</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_home">HomeActivity</string>
     
     <!-- login -->
     <string name="label_login_name">帐号</string>
@@ -12,7 +10,7 @@
     <string name="label_login_guest">游客</string>
     <string name="label_website_link">还没有帐号？  <a href="http://www.newsmth.net/nForum/#!reg">注册</a></string>
 
-    <!-- navbar text-->
+    <!-- navbar -->
     <string name="label_navbar_home">首页</string>
     <string name="label_navbar_hot">十大</string>
     <string name="label_navbar_msg">消息</string>
@@ -27,5 +25,15 @@
         <item>@string/label_navbar_search</item>
         <item>@string/label_navbar_more</item>    
     </string-array>
+    
+    <!-- test -->
+    <string name="label_test_rank">TOP 1</string>
+    <string name="label_test_hots">回帖【123】</string>
+    <string name="label_test_board">【职业生涯】</string>
+    <string name="label_test_title">颤抖吧，彪仔</string>
+    <string name="label_test_content">海底捞，还是金钱豹，你自己选吧!海底捞，还是金钱豹，你自己选吧!海底捞，还是金钱豹，你自己选吧!海底捞，还是金钱豹，你自己选吧!海底捞，还是金钱豹，你自己选吧!海底捞，还是金钱豹，你自己选吧!</string>
+    <string name="label_test_date">9月17日 20:59</string>
+    <string name="label_test_author">来自肥葵葵</string>
+    <string name="label_test_link">原始链接</string>
     
 </resources>

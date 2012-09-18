@@ -4,9 +4,6 @@
     <item android:state_pressed="true"
           android:drawable="@drawable/topbar_back_pressed" />
     
-    <item android:state_focused="true"
-          android:drawable="@drawable/topbar_back_pressed" />
-    
     <item android:drawable="@drawable/topbar_back_default" />
     
 </selector>

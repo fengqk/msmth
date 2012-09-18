@@ -7,8 +7,8 @@
     android:orientation="vertical" >
     
     <!-- user input area -->
-    <include 
-        android:id="@id/layout_login_input"
+    <include
+        android:id="@id/layout_login_input" 
         layout="@layout/login_input" />
     
     <!-- user click area -->
@@ -17,8 +17,8 @@
         layout="@layout/login_click" />
     
     <!-- user intro area -->
-    <include 
-        android:id="@id/layout_login_intro"
+    <include
+        android:id="@id/layout_login_intro" 
         layout="@layout/login_intro" />
     
 </LinearLayout>

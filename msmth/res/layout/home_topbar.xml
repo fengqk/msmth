@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@id/layout_topbar_home"
     android:layout_width="match_parent"
     android:layout_height="wrap_content" 
     android:background="@drawable/topbar" >
     
     <!-- post -->
-    <ImageButton
-        android:id="@id/button_topbar_post"
+    <ImageView
+        android:id="@id/image_topbar_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:src="@drawable/topbar_post" 
+        android:clickable="true"
+        android:background="@drawable/topbar_post"
         android:contentDescription="@string/app_name" />
 
     <!-- user -->
@@ -23,12 +23,13 @@
         android:text="@string/label_login_name" />
     
     <!-- refresh -->
-    <ImageButton
-        android:id="@id/button_topbar_refresh"
+    <ImageView
+        android:id="@id/image_topbar_refresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:src="@drawable/topbar_refresh" 
+        android:clickable="true"
+        android:background="@drawable/topbar_refresh"
         android:contentDescription="@string/app_name" />
         
 </RelativeLayout>

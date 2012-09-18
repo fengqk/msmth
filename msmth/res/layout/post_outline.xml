@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/layout_post_outline"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@color/papayawhip" >
+    
+    <!-- post rank -->
+    <RelativeLayout
+        android:id="@+id/layout_post_outline_rank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        
+        <TextView
+	        android:id="@id/text_post_rank"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textColor="@color/tomato"
+	        android:textSize="20dp" 
+	        android:text="@string/label_test_rank" />
+        
+        <TextView
+            android:id="@id/text_post_hots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignBaseline="@id/text_post_rank"
+            android:textColor="@color/tomato"
+            android:textSize="20dp"
+            android:text="@string/label_test_hots" />
+        
+    </RelativeLayout>
+    
+    <View
+        android:id="@+id/seperator_post_rank" 
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/layout_post_outline_rank" 
+        android:background="?android:attr/listDivider" />
+    
+    <!-- post title -->
+    <RelativeLayout
+        android:id="@+id/layout_post_outline_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_below="@+id/seperator_post_rank" >
+        
+        <TextView
+            android:id="@id/text_post_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="18dp" 
+            android:text="@string/label_test_title" />
+                
+	    <TextView
+	        android:id="@id/text_post_board"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@id/text_post_title"
+	        android:layout_marginLeft="5dip"
+	        android:layout_alignBaseline="@id/text_post_title"
+	        android:textColor="@color/slategray"
+	        android:textSize="16dp"
+	        android:text="@string/label_test_board" />
+	  
+	</RelativeLayout>
+
+    <!-- post content -->
+    <RelativeLayout
+        android:id="@+id/layout_post_outline_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_post_outline_title" >
+	    
+	    <TextView
+	        android:id="@id/text_post_content"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:textColor="@color/black"
+	        android:textSize="18dp"
+	        android:text="@string/label_test_content" />
+	    
+	    <LinearLayout
+	        android:id="@+id/layout_post_image"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical" >
+	    </LinearLayout>
+    
+	</RelativeLayout>
+	
+    <!-- post property -->
+    <RelativeLayout
+        android:id="@+id/layout_post_outline_property"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_post_outline_content" >
+	    
+	    <TextView
+	        android:id="@id/text_post_date"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textColor="@color/slategray"
+	        android:textSize="16dp" 
+	        android:text="@string/label_test_date" />
+	    
+	    <TextView
+	        android:id="@id/text_post_author"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@id/text_post_date"
+	        android:layout_marginLeft="5dip"
+	        android:textColor="@color/slategray"
+	        android:textSize="16dp"
+	        android:text="@string/label_test_author" />
+	    
+	    <TextView
+	        android:id="@id/text_post_link"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@id/text_post_author"
+	        android:layout_marginLeft="5dip"
+	        android:textColor="@color/slategray"
+	        android:textSize="16dp"
+	        android:text="@string/label_test_link" />
+	    
+	 </RelativeLayout>
+
+</RelativeLayout>

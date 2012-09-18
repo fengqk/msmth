@@ -7,16 +7,30 @@
     <item type="id" name="layout_login_click" />
     <item type="id" name="layout_login_intro" />
     <item type="id" name="layout_main" />
-    <item type="id" name="layout_main_navbar" />
     <item type="id" name="layout_main_topbar" />
-    <item type="id" name="layout_topbar_home" />
-    <item type="id" name="layout_topbar_hot" />
+    <item type="id" name="layout_main_navbar" />
+    <item type="id" name="layout_home" />
+    <item type="id" name="layout_home_topbar" />
+    <item type="id" name="layout_home_body" />
+    <item type="id" name="layout_hot" />
+    <item type="id" name="layout_hot_topbar" />
+    <item type="id" name="layout_hot_body" />
+    <item type="id" name="layout_post_outline" />
+    <item type="id" name="layout_post_details" />
     
     <!-- text view -->
     <item type="id" name="text_login_name" />
     <item type="id" name="text_login_pass" />
     <item type="id" name="text_website_link" />
     <item type="id" name="text_user_name" />
+    <item type="id" name="text_post_rank" />
+    <item type="id" name="text_post_hots" />
+    <item type="id" name="text_post_board" />
+    <item type="id" name="text_post_title" />
+    <item type="id" name="text_post_content" />
+    <item type="id" name="text_post_date" />
+    <item type="id" name="text_post_author" />
+    <item type="id" name="text_post_link" />
     
     <!-- edit text -->
     <item type="id" name="edit_login_name" />
@@ -25,10 +39,6 @@
     <!-- button -->
     <item type="id" name="button_login_enter" />
     <item type="id" name="button_login_guest" />
-    <item type="id" name="button_topbar_back" />
-    <item type="id" name="button_topbar_post" />
-    <item type="id" name="button_topbar_send" />
-    <item type="id" name="button_topbar_refresh" />
     <item type="id" name="button_msg_at" />
     <item type="id" name="button_msg_mail" />
     <item type="id" name="button_msg_reply" />
@@ -42,5 +52,12 @@
     
     <!-- image view-->
     <item type="id" name="image_website_logo" />
+    <item type="id" name="image_topbar_back" />
+    <item type="id" name="image_topbar_post" />
+    <item type="id" name="image_topbar_send" />
+    <item type="id" name="image_topbar_refresh" />
+    
+    <!-- list view-->
+    <item type="id" name="list_hot_post" />
     
 </resources>

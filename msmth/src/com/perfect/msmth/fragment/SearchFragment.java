@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.view.LayoutInflater;
 import android.app.Activity;
 import android.util.AttributeSet;
+import android.util.Log;
 
 public class SearchFragment extends Fragment {
     private CharSequence mLabel;
@@ -24,13 +25,7 @@ public class SearchFragment extends Fragment {
     }
     
     @Override
-    public void onInflate(Activity activity, AttributeSet attrs, Bundle savedInstanceState){
-        super.onInflate(activity, attrs, savedInstanceState);
-
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         Bundle args = getArguments();
@@ -43,5 +38,11 @@ public class SearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View mainview = new View(getActivity());
         return mainview;
+    }
+    
+    @Override
+    public void onInflate(Activity activity, AttributeSet attrs, Bundle savedInstanceState) {
+        super.onInflate(activity, attrs, savedInstanceState);
+
     }
 }

@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.Window;
@@ -16,13 +17,6 @@ import android.widget.TabHost.TabContentFactory;
 import android.widget.TabHost.OnTabChangeListener;
 
 public class MainActivity extends FragmentActivity implements OnTabChangeListener, TabContentFactory {
-    
-    // tab tags
-    public static final String TAB_TAG_HOME = "home";
-    public static final String TAB_TAG_HOT = "hot";
-    public static final String TAB_TAG_MSG = "msg";
-    public static final String TAB_TAG_SEARCH = "search";
-    public static final String TAB_TAG_MORE = "more";
     
     private TabHost mTabHost;
     
@@ -33,7 +27,7 @@ public class MainActivity extends FragmentActivity implements OnTabChangeListene
         setContentView(R.layout.main);
         
         // create tabs
-        this.createTabHost();
+        createTabHost();
     }
 
     @Override
@@ -44,7 +38,7 @@ public class MainActivity extends FragmentActivity implements OnTabChangeListene
     
     @Override
     public void onTabChanged(String tabId){
-        //switch tabs
+        // switch tabs
         switchTabHost(tabId);
     }
 
@@ -61,7 +55,7 @@ public class MainActivity extends FragmentActivity implements OnTabChangeListene
         TabHelper.createTab(this, mTabHost);
         mTabHost.setOnTabChangedListener(this);
         
-        switchTabHost(getString(R.string.label_navbar_more));
+        switchTabHost(getString(R.string.label_navbar_hot));
     }
     
     private void switchTabHost(String tabId){
@@ -70,7 +64,7 @@ public class MainActivity extends FragmentActivity implements OnTabChangeListene
         if(f != null){
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(android.R.id.tabcontent, f);
-            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            ft.setTransition(FragmentTransaction.TRANSIT_NONE);
             ft.addToBackStack(null);
             ft.commit();
         }

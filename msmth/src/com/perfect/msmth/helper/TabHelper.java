@@ -17,6 +17,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.view.Gravity;
+import android.content.res.Resources;
 
 public class TabHelper {
     
@@ -57,7 +58,7 @@ public class TabHelper {
     public static View createTabContent(MainActivity context, String tag){
         FragmentManager fm = context.getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        
+ 
         if(tag.equalsIgnoreCase(context.getString(R.string.label_navbar_home))){
             HomeFragment f = (HomeFragment)fm.findFragmentByTag(tag);
             if(f == null){
@@ -97,22 +98,26 @@ public class TabHelper {
             return null;
         }
         
+        fm.executePendingTransactions();
         return new View(context);
     }
     
-    public static View createTabLayout(MainActivity context, String text, int drawableId){  
+    public static View createTabLayout(MainActivity context, String text, int drawableId){
+        Resources res = context.getResources();
+        
         LinearLayout layout = new LinearLayout(context);  
-        layout.setOrientation(LinearLayout.VERTICAL);  
+        layout.setOrientation(LinearLayout.VERTICAL);
+        layout.setBackgroundDrawable(res.getDrawable(R.drawable.navbar_bg));
         
         ImageView iv = new ImageView(context);
-        iv.setImageDrawable(context.getResources().getDrawable(drawableId)); 
+        iv.setImageDrawable(res.getDrawable(drawableId)); 
         layout.addView(iv, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));  
      
         TextView tv = new TextView(context);  
         tv.setGravity(Gravity.CENTER);  
         tv.setSingleLine(true);  
         tv.setText(text);
-        tv.setTextColor(context.getResources().getColorStateList(R.color.navbar_text));
+        tv.setTextColor(res.getColorStateList(R.color.navbar_text));
         layout.addView(tv,new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));  
         
         return layout;
