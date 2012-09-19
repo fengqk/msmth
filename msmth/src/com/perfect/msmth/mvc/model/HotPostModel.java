@@ -39,7 +39,7 @@ public class HotPostModel extends Model {
         
         @Override
         protected List<PostData> doInBackground(Void... params) {
-            return SmthHelper.getInstance().getHotPostList();
+            return SmthHelper.getInstance().getHotPost();
         }
 
         @Override

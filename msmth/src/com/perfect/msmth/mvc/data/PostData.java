@@ -11,6 +11,19 @@ public class PostData extends Data {
     private String mDate;
     private String mLink;
     
+    public PostData copy() {
+        PostData copy = new PostData();
+        
+        copy.mTitle = mTitle;
+        copy.mBoard = mBoard;
+        copy.mContent = mContent;
+        copy.mAuthor = mAuthor;
+        copy.mDate = mDate;
+        copy.mLink = mLink;
+        
+        return copy;
+    }
+    
     public String getTitle() {
         return mTitle;
     }

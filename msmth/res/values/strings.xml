@@ -17,7 +17,6 @@
     <string name="label_navbar_search">搜索</string>
     <string name="label_navbar_more">更多</string>
     
-    <!-- navbar tags -->
     <string-array name="label_navbar_tags">
         <item>@string/label_navbar_home</item>
         <item>@string/label_navbar_hot</item>
@@ -26,14 +25,9 @@
         <item>@string/label_navbar_more</item>    
     </string-array>
     
-    <!-- test -->
-    <string name="label_test_rank">TOP 1</string>
-    <string name="label_test_hots">回帖【123】</string>
-    <string name="label_test_board">【职业生涯】</string>
-    <string name="label_test_title">颤抖吧，彪仔</string>
-    <string name="label_test_content">海底捞，还是金钱豹，你自己选吧!海底捞，还是金钱豹，你自己选吧!海底捞，还是金钱豹，你自己选吧!海底捞，还是金钱豹，你自己选吧!海底捞，还是金钱豹，你自己选吧!海底捞，还是金钱豹，你自己选吧!</string>
-    <string name="label_test_date">9月17日 20:59</string>
-    <string name="label_test_author">来自肥葵葵</string>
-    <string name="label_test_link">原始链接</string>
+    <!-- post -->
+    <string name="label_post_rank">TOP-</string>
+    <string name="label_post_author">来自</string>
+    <string name="label_post_link">原始链接</string>
     
 </resources>

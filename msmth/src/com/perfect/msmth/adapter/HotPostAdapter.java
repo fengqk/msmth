@@ -12,6 +12,10 @@ import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.text.Spanned;
+import android.text.SpannableString;
+import android.text.style.URLSpan;
+import android.text.method.LinkMovementMethod;
 
 public class HotPostAdapter extends BaseAdapter {
 
@@ -81,14 +85,28 @@ public class HotPostAdapter extends BaseAdapter {
         
         PostData post = mPostList.get(position);
         
-        holder.mRank.setText("TOP " + Integer.toString(position + 1));
+        // post rank
+        holder.mRank.setText(mFragment.getString(R.string.label_post_rank) + Integer.toString(position + 1));
         holder.mHots.setText("");
+        
+        // post title
         holder.mTitle.setText(post.getTitle());
-        holder.mBoard.setText("[" + post.getBoard() + "]");
+        holder.mBoard.setText("");
+        
+        // post content
         holder.mContent.setText(post.getContent());
-        holder.mDate.setText("9月18日 20:59");
-        holder.mAuthor.setText("来自" + post.getAuthor());
-        holder.mLink.setText(post.getLink());
+        
+        // post date
+        holder.mDate.setText(post.getDate());
+        
+        // post author
+        holder.mAuthor.setText(mFragment.getString(R.string.label_post_author) + post.getAuthor());
+        
+        // post link
+        SpannableString sp = new SpannableString(mFragment.getString(R.string.label_post_link));   
+        sp.setSpan(new URLSpan(post.getLink()), 0, 4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);   
+        holder.mLink.setText(sp);
+        holder.mLink.setMovementMethod(LinkMovementMethod.getInstance());   
         
         return layout;
     }

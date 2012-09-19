@@ -16,9 +16,7 @@
 	        android:id="@id/text_post_rank"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:textColor="@color/tomato"
-	        android:textSize="20dp" 
-	        android:text="@string/label_test_rank" />
+	        android:textAppearance="@style/style_post_rank" />
         
         <TextView
             android:id="@id/text_post_hots"
@@ -26,9 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignBaseline="@id/text_post_rank"
-            android:textColor="@color/tomato"
-            android:textSize="20dp"
-            android:text="@string/label_test_hots" />
+            android:textAppearance="@style/style_post_rank" />
         
     </RelativeLayout>
     
@@ -50,10 +46,7 @@
             android:id="@id/text_post_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textSize="18dp" 
-            android:text="@string/label_test_title" />
+            android:textAppearance="@style/style_post_title" />
                 
 	    <TextView
 	        android:id="@id/text_post_board"
@@ -62,9 +55,7 @@
 	        android:layout_toRightOf="@id/text_post_title"
 	        android:layout_marginLeft="5dip"
 	        android:layout_alignBaseline="@id/text_post_title"
-	        android:textColor="@color/slategray"
-	        android:textSize="16dp"
-	        android:text="@string/label_test_board" />
+	        android:textAppearance="@style/style_post_title" />
 	  
 	</RelativeLayout>
 
@@ -79,9 +70,7 @@
 	        android:id="@id/text_post_content"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:textColor="@color/black"
-	        android:textSize="18dp"
-	        android:text="@string/label_test_content" />
+	        android:textAppearance="@style/style_post_content" />
 	    
 	    <LinearLayout
 	        android:id="@+id/layout_post_image"
@@ -103,9 +92,7 @@
 	        android:id="@id/text_post_date"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:textColor="@color/slategray"
-	        android:textSize="16dp" 
-	        android:text="@string/label_test_date" />
+	        android:textAppearance="@style/style_post_property" />
 	    
 	    <TextView
 	        android:id="@id/text_post_author"
@@ -113,9 +100,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_toRightOf="@id/text_post_date"
 	        android:layout_marginLeft="5dip"
-	        android:textColor="@color/slategray"
-	        android:textSize="16dp"
-	        android:text="@string/label_test_author" />
+	        android:textAppearance="@style/style_post_property" />
 	    
 	    <TextView
 	        android:id="@id/text_post_link"
@@ -123,9 +108,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_toRightOf="@id/text_post_author"
 	        android:layout_marginLeft="5dip"
-	        android:textColor="@color/slategray"
-	        android:textSize="16dp"
-	        android:text="@string/label_test_link" />
+	        android:textAppearance="@style/style_post_property" />
 	    
 	 </RelativeLayout>
 
