@@ -1,22 +1,23 @@
 package com.perfect.msmth.adapter;
 
 import com.perfect.msmth.R;
-import com.perfect.msmth.fragment.HotFragment;
+import com.perfect.msmth.fragment.HomeFragment;
 import com.perfect.msmth.mvc.data.PostData;
 
-import java.util.List;
-
+import android.text.Html;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.LayoutInflater;
-import android.widget.RelativeLayout;
 import android.widget.BaseAdapter;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.text.Html;
 
-public class HotPostAdapter extends BaseAdapter {
+import java.util.List;
+import java.util.Date;
 
-    private class HotPostViewHolder {
+public class NewPostAdapter extends BaseAdapter {
+
+    private class NewPostViewHolder {
         public TextView mTitle;
         public TextView mContent;
         public TextView mDate;
@@ -24,11 +25,11 @@ public class HotPostAdapter extends BaseAdapter {
         public TextView mLink;
     }
     
-    private HotFragment mFragment;
+    private HomeFragment mFragment;
     private LayoutInflater mInflater;
     private List<PostData> mPostList;
     
-    public HotPostAdapter(HotFragment fragment, LayoutInflater inflater) {
+    public NewPostAdapter(HomeFragment fragment, LayoutInflater inflater) {
         mFragment = fragment;
         mInflater = inflater;
     }
@@ -56,14 +57,14 @@ public class HotPostAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         RelativeLayout layout = null;
-        HotPostViewHolder holder = null;
+        NewPostViewHolder holder = null;
         
         if(convertView != null){
             layout = (RelativeLayout)convertView;
-            holder = (HotPostViewHolder)layout.getTag();
+            holder = (NewPostViewHolder)layout.getTag();
         } else {
             layout = (RelativeLayout)mInflater.inflate(R.layout.post, null);
-            holder = new HotPostViewHolder();
+            holder = new NewPostViewHolder();
             
             holder.mTitle = (TextView)layout.findViewById(R.id.text_post_title);
             holder.mContent = (TextView)layout.findViewById(R.id.text_post_content);
@@ -76,9 +77,8 @@ public class HotPostAdapter extends BaseAdapter {
         
         PostData post = mPostList.get(position);
         
-        String rank = String.format(mFragment.getString(R.string.label_post_rank), position + 1);
         if(post.getTitle() != null) {
-            holder.mTitle.setText(rank + post.getTitle());
+            holder.mTitle.setText(post.getBoard() + post.getTitle());
         } else {
             holder.mTitle.setText("unknown");
         }
@@ -90,7 +90,8 @@ public class HotPostAdapter extends BaseAdapter {
         }
         
         if(post.getDate() != null) {
-            holder.mDate.setText(post.getDate());
+            Date d  = new Date(Integer.parseInt(post.getDate()));
+            holder.mDate.setText(d.toString());
         } else {
             holder.mDate.setText("unknown");
         }
@@ -110,4 +111,5 @@ public class HotPostAdapter extends BaseAdapter {
         
         return layout;
     }
+    
 }

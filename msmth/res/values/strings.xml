@@ -26,8 +26,21 @@
     </string-array>
     
     <!-- post -->
-    <string name="label_post_rank">TOP-</string>
-    <string name="label_post_author">来自</string>
-    <string name="label_post_link">原始链接</string>
+    <string name="label_post_rank">TOP%d</string>
+    <string name="label_post_author">来自%s</string>
+    
+    <!-- group -->
+    <string-array name="label_hot_group">
+        <item>全站热点</item>
+        <item>国内院校 </item>
+        <item>休闲娱乐</item>
+        <item>游戏天地</item> 
+        <item>体育健身</item> 
+        <item>社会信息</item> 
+        <item>知性感性 </item> 
+        <item>文化人文</item> 
+        <item>学术科学</item> 
+        <item>电脑技术</item>
+    </string-array>
     
 </resources>

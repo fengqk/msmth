@@ -1,19 +1,19 @@
 package com.perfect.msmth.mvc.model;
 
+import com.perfect.msmth.helper.SmthHelper;
 import com.perfect.msmth.mvc.Model;
 import com.perfect.msmth.mvc.data.PostData;
-import com.perfect.msmth.helper.SmthHelper;
-
-import java.util.List;
 
 import android.os.AsyncTask;
 
-public class HotPostModel extends Model {
+import java.util.List;
+
+public class NewPostModel extends Model {
 
     private List<PostData> mPostList;
     
-    public void update(int pos) {
-        new UpdateTask(this).execute(pos);
+    public void update() {
+        new UpdateTask(this).execute();
     }
     
     public List<PostData> getPostList() {
@@ -24,11 +24,11 @@ public class HotPostModel extends Model {
         mPostList = postList;
     }
     
-    class UpdateTask extends AsyncTask<Integer, Void, List<PostData>> { 
-    
-        private HotPostModel mModel;
+    class UpdateTask extends AsyncTask<Void, Void, List<PostData>> { 
         
-        public UpdateTask(HotPostModel model) {
+        private NewPostModel mModel;
+        
+        public UpdateTask(NewPostModel model) {
             mModel = model;
         }
         
@@ -38,8 +38,8 @@ public class HotPostModel extends Model {
         }
         
         @Override
-        protected List<PostData> doInBackground(Integer... params) {
-            return SmthHelper.getInstance().getHotPostList(params[0]);
+        protected List<PostData> doInBackground(Void... params) {
+            return SmthHelper.getInstance().getNewPostList();
         }
 
         @Override

@@ -14,10 +14,10 @@ import android.sax.EndTextElementListener;
 
 public class XmlHelper {
 
-    public static final String SMTH_HOT_DATE_REGEXP = "([a-zA-Z]{3}\\s\\d{2}\\s\\d{2}:\\d{2})";
-    public static final String SMTH_HOT_CONTENT_REGEXP = "<br/><br/>(.*?)<br/>--<br/>";
+    public static final String SMTH_HOT_DATE_REGEXP = "([a-zA-Z]{3}\\s\\d{2}\\s\\d{2}:\\d{2}:\\d{2})";
+    public static final String SMTH_HOT_CONTENT_REGEXP = "<br/><br/>(.*?)[<br/>]*¡ù";
     
-    public static List<PostData> parseHotPost(String content) {
+    public static List<PostData> parseHotPostList(String content) {
         final PostData post = new PostData();
         final List<PostData> postList = new ArrayList<PostData>();
         

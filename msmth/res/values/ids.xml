@@ -15,17 +15,18 @@
     <item type="id" name="layout_hot" />
     <item type="id" name="layout_hot_topbar" />
     <item type="id" name="layout_hot_body" />
-    <item type="id" name="layout_post_outline" />
-    <item type="id" name="layout_post_details" />
+    <item type="id" name="layout_post" />
+    <item type="id" name="layout_post_head" />
+    <item type="id" name="layout_post_body" />
+    <item type="id" name="layout_post_content" />
+    <item type="id" name="layout_post_property" />
+    <item type="id" name="layout_subject" />
     
     <!-- text view -->
     <item type="id" name="text_login_name" />
     <item type="id" name="text_login_pass" />
     <item type="id" name="text_website_link" />
     <item type="id" name="text_user_name" />
-    <item type="id" name="text_post_rank" />
-    <item type="id" name="text_post_hots" />
-    <item type="id" name="text_post_board" />
     <item type="id" name="text_post_title" />
     <item type="id" name="text_post_content" />
     <item type="id" name="text_post_date" />
@@ -59,5 +60,9 @@
     
     <!-- list view-->
     <item type="id" name="list_hot_post" />
+    <item type="id" name="list_new_post" />
+    
+    <!-- spinner -->
+    <item type="id" name="spinner_topbar_hot_group" />
     
 </resources>

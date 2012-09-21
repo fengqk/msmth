@@ -117,6 +117,7 @@ public class TabHelper {
         tv.setGravity(Gravity.CENTER);  
         tv.setSingleLine(true);  
         tv.setText(text);
+        tv.setTextSize(12);
         tv.setTextColor(res.getColorStateList(R.color.navbar_text));
         layout.addView(tv,new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));  
         

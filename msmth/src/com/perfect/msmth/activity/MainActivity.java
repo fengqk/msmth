@@ -55,7 +55,7 @@ public class MainActivity extends FragmentActivity implements OnTabChangeListene
         TabHelper.createTab(this, mTabHost);
         mTabHost.setOnTabChangedListener(this);
         
-        switchTabHost(getString(R.string.label_navbar_hot));
+        switchTabHost(getString(R.string.label_navbar_home));
     }
     
     private void switchTabHost(String tabId){

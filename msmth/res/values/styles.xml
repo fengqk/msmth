@@ -1,28 +1,27 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <style name="AppTheme" parent="android:Theme">
         <item name="android:windowNoTitle">true</item> 
     </style>
     
-    <style name="style_post_rank">
-        <item name="android:textColor">@color/tomato</item>
-        <item name="android:textSize">14dp</item>
-    </style>
-    
     <style name="style_post_title">
-        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">14dp</item>
+        <item name="android:textSize">17dp</item>
     </style>
 
     <style name="style_post_content">
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">12dp</item>
+        <item name="android:textSize">17dp</item>
     </style>
     
     <style name="style_post_property">
         <item name="android:textColor">@color/slategray</item>
-        <item name="android:textSize">10dp</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+    
+    <style name="style_post_hot_spinner">
+        <item name="android:headerDividersEnabled">false</item>
+        <item name="android:paddingLeft">5dp</item>
     </style>
     
 </resources>
