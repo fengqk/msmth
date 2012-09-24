@@ -9,8 +9,7 @@
     <RelativeLayout
         android:id="@id/layout_post_head"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/skyblue" >
+        android:layout_height="wrap_content" >
         
         <!-- post title -->
         <TextView
@@ -27,61 +26,61 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/layout_post_head" >
     
-	    <!-- post content -->
-	    <RelativeLayout
-	        android:id="@id/layout_post_content"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content" >
-		    
-		    <TextView
-		        android:id="@id/text_post_content"
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:textAppearance="@style/style_post_content" />
-		    
-		    <LinearLayout
-		        android:id="@+id/layout_post_image"
-		        android:layout_width="match_parent"
-		        android:layout_height="wrap_content"
-		        android:orientation="vertical" >
-		    </LinearLayout>
-	    
-		</RelativeLayout>
-		
-	    <!-- post property -->
-	    <RelativeLayout
-	        android:id="@id/layout_post_property"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_below="@id/layout_post_content" >
-		    
-		    <TextView
-		        android:id="@id/text_post_date"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:textAppearance="@style/style_post_property" />
-		    
-		    <TextView
-		        android:id="@id/text_post_author"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:layout_toRightOf="@id/text_post_date"
-		        android:layout_marginLeft="20dip"
-		        android:layout_alignBaseline="@id/text_post_date"
-		        android:textAppearance="@style/style_post_property" />
-		    
-		    <TextView
-		        android:id="@id/text_post_link"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:layout_alignParentRight="true"
-		        android:layout_marginRight="10dip"
-		        android:layout_alignBaseline="@id/text_post_date"
-		        android:textColorLink="@color/slategray"
-		        android:textAppearance="@style/style_post_property" />
-		    
-		</RelativeLayout>
-		    
-	</RelativeLayout>
+        <!-- post content -->
+        <RelativeLayout
+            android:id="@id/layout_post_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+            
+            <TextView
+                android:id="@id/text_post_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/style_post_content" />
+            
+            <LinearLayout
+                android:id="@+id/layout_post_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+            </LinearLayout>
+        
+        </RelativeLayout>
+        
+        <!-- post property -->
+        <RelativeLayout
+            android:id="@id/layout_post_property"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_post_content" >
+            
+            <TextView
+                android:id="@id/text_post_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/style_post_property" />
+            
+            <TextView
+                android:id="@id/text_post_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/text_post_date"
+                android:layout_marginLeft="20dip"
+                android:layout_alignBaseline="@id/text_post_date"
+                android:textAppearance="@style/style_post_property" />
+            
+            <TextView
+                android:id="@id/text_post_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dip"
+                android:layout_alignBaseline="@id/text_post_date"
+                android:textColorLink="@color/slategray"
+                android:textAppearance="@style/style_post_property" />
+            
+        </RelativeLayout>
+            
+    </RelativeLayout>
 
 </RelativeLayout>

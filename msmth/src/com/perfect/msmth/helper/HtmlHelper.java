@@ -1,7 +1,8 @@
 package com.perfect.msmth.helper;
 
 import com.perfect.msmth.mvc.data.PostData;
-import com.perfect.msmth.helper.SmthHelper;
+import com.perfect.msmth.helper.SmthSpider;
+import com.perfect.msmth.helper.StrHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,35 +28,57 @@ public class HtmlHelper {
         return m.group(grpIdx);
     }
     
-    public static final String SMTH_BOARD_REGEXP = "<h1 class=\"(.*?)\">(.*?)</h1>"; 
-    public static final String SMTH_POST_REGEXP = "c.o(.*?);"; 
+    public static PostData parsePost(String content) {
+        if(content == null) {
+            return new PostData();
+        }
+        
+        PostData post = new PostData();
+        
+        Matcher m = null;
+        m = Pattern.compile(StrHelper.REG_SMTH_POST_TITLE).matcher(content);
+        if(m.find()) { 
+            post.setTitle(m.group(1));
+        }
+        
+        m = Pattern.compile(StrHelper.REG_SMTH_POST_BOARD).matcher(content);
+        if(m.find()) { 
+            post.setBoard(m.group(1));
+        }
+        
+        m = Pattern.compile(StrHelper.REG_SMTH_POST_AUTHOR).matcher(content);
+        if(m.find()) { 
+            post.setAuthor(m.group(1));
+        }
+        
+        m = Pattern.compile(StrHelper.REG_SMTH_POST_DATE).matcher(content);
+        if(m.find()) { 
+            post.setDate(m.group(1));
+        }
+        
+        m = Pattern.compile(StrHelper.REG_SMTH_POST_CONTENT).matcher(content);
+        if(m.find()) { 
+            Object[] objects = StrHelper.filterPostContent(m.group(1));
+            post.setContent((String)objects[0]);
+        }
+        
+        return post;
+    }
     
-    public static List<PostData> parseNewPostList(String content) {
+    public static List<PostData> parsePostList(String content) {
         if(content == null) {
             return new ArrayList<PostData>();
         }
         
-        final PostData post = new PostData();
         final List<PostData> postList = new ArrayList<PostData>();
         
-        String board = "";
-        Matcher m = Pattern.compile(SMTH_BOARD_REGEXP).matcher(content);
-        if(m.find()) {
-            board = m.group(2);
-        }
-        
-        m = Pattern.compile(SMTH_POST_REGEXP).matcher(content);
-        while(m.find()) {
-            String list[] = m.group(1).split(",");
-            
-            post.setId(list[0]);
-            post.setAuthor(list[2]);
-            post.setDate(list[4]);
-            post.setTitle(list[5]);
-            post.setBoard(board);
-            //String.format(SmthHelper.SMTH_POST_URL, 
-            
-            postList.add(post.copy());
+        Matcher m = Pattern.compile(StrHelper.REG_SMTH_POST_LIST).matcher(content);
+        while(m.find()) {            
+            String url = String.format(StrHelper.URL_SMTH_POST, m.group(1), m.group(2));
+            String detail = SmthSpider.getInstance().getUrlContent(url);
+            if(detail != null) {
+                postList.add(parsePost(detail));
+            }
         }
         
         return postList;

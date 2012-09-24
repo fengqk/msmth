@@ -6,12 +6,12 @@
     
     <style name="style_post_title">
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">17dp</item>
+        <item name="android:textSize">16dp</item>
     </style>
 
     <style name="style_post_content">
-        <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">17dp</item>
+        <item name="android:textColor">@color/slategray</item>
+        <item name="android:textSize">14dp</item>
     </style>
     
     <style name="style_post_property">

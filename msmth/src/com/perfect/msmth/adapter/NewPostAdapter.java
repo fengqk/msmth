@@ -13,7 +13,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.List;
-import java.util.Date;
 
 public class NewPostAdapter extends BaseAdapter {
 
@@ -78,34 +77,33 @@ public class NewPostAdapter extends BaseAdapter {
         PostData post = mPostList.get(position);
         
         if(post.getTitle() != null) {
-            holder.mTitle.setText(post.getBoard() + post.getTitle());
+            holder.mTitle.setText(post.getTitle());
         } else {
-            holder.mTitle.setText("unknown");
+            holder.mTitle.setText("null");
         }
         
         if(post.getContent() != null) {
             holder.mContent.setText(Html.fromHtml(post.getContent()));
         } else {
-            holder.mContent.setText("unknown");
+            holder.mContent.setText("null");
         }
         
         if(post.getDate() != null) {
-            Date d  = new Date(Integer.parseInt(post.getDate()));
-            holder.mDate.setText(d.toString());
+            holder.mDate.setText(post.getDate());
         } else {
-            holder.mDate.setText("unknown");
+            holder.mDate.setText("null");
         }
         
         if(post.getAuthor() != null) {
             holder.mAuthor.setText(String.format(mFragment.getString(R.string.label_post_author), post.getAuthor()));
         } else {
-            holder.mAuthor.setText("unknown");
+            holder.mAuthor.setText("null");
         }
         
         if(post.getLink() != null) {
             holder.mLink.setText(post.getLink());
         } else {
-            holder.mLink.setText("unknown");
+            holder.mLink.setText("null");
         }
         holder.mLink.setVisibility(View.GONE);
         

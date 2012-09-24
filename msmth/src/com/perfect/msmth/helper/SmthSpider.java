@@ -1,5 +1,7 @@
 package com.perfect.msmth.helper;
 
+import com.perfect.msmth.helper.UtilHelper;
+
 import java.io.InputStream;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -31,7 +33,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 public class SmthSpider {
     
-    public static final String ENCODING = "GBK";
+    public static final String ENCODING = "UTF-8";
     public static final String USER_AGENT = "Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.1.4) Gecko/20091016 Firefox/3.5.4";
 
     private DefaultHttpClient httpClient;
@@ -98,7 +100,7 @@ public class SmthSpider {
             content = null;
         }
         
-        return content;
+        return UtilHelper.toDBC(content);
     }
     
     public void Destroy() {

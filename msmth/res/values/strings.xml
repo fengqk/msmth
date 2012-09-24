@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">水木微博</string>
+    <string name="app_name">水木社区</string>
     <string name="menu_settings">Settings</string>
     
     <!-- login -->
@@ -26,8 +26,8 @@
     </string-array>
     
     <!-- post -->
-    <string name="label_post_rank">TOP%d</string>
-    <string name="label_post_author">来自%s</string>
+    <string name="label_post_rank" formatted = "false">%d.[%s]%s</string>
+    <string name="label_post_author" formatted = "false">来自%s</string>
     
     <!-- group -->
     <string-array name="label_hot_group">

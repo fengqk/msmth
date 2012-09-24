@@ -4,7 +4,7 @@ import com.perfect.msmth.mvc.Data;
 
 public class PostData extends Data {
 
-    private String mId;
+    private String mID;
     private String mTitle;
     private String mBoard;
     private String mContent;
@@ -15,7 +15,7 @@ public class PostData extends Data {
     public PostData copy() {
         PostData copy = new PostData();
         
-        copy.mId = mId;
+        copy.mID = mID;
         copy.mTitle = mTitle;
         copy.mBoard = mBoard;
         copy.mContent = mContent;
@@ -26,12 +26,12 @@ public class PostData extends Data {
         return copy;
     }
     
-    public String getId() {
-        return mId;
+    public String getID() {
+        return mID;
     }
     
-    public void setId(String id) {
-        mId = id;
+    public void setID(String id) {
+        mID = id;
     }
     
     public String getTitle() {

@@ -7,7 +7,7 @@
         android:id="@id/list_hot_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:divider="@color/linen"
+        android:divider="@color/gainsboro"
         android:dividerHeight="1dp"  
         android:fastScrollEnabled="true" />
     

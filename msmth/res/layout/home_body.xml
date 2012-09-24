@@ -3,11 +3,45 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content" >
     
+    <!-- board -->
+    <SlidingDrawer 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:handle="@+id/handle"
+        android:content="@+id/content"
+        android:allowSingleTap="false"
+        android:orientation="vertical"
+        android:id="@+id/slidingdrawer">
+        
+        <ImageButton 
+            android:id="@id/handle" 
+            android:layout_width="50dip"
+            android:layout_height="44dip" 
+            android:contentDescription="@string/app_name" />
+      
+        <LinearLayout 
+            android:id="@id/content"
+            android:layout_width="match_parent" 
+            android:layout_height="match_parent" 
+            android:background="#ffffff" >
+            
+            <TextView 
+                android:id="@+id/tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:text="@string/label_login_name" />
+        </LinearLayout>
+          
+    </SlidingDrawer>
+    
     <ListView 
         android:id="@id/list_new_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:divider="@color/linen"
+        android:divider="@color/gainsboro"
         android:dividerHeight="1dp"  
         android:fastScrollEnabled="true" />
     
