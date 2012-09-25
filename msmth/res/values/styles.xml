@@ -7,11 +7,14 @@
     <style name="style_post_title">
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="style_post_content">
-        <item name="android:textColor">@color/slategray</item>
-        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:maxLines">5</item> 
+        <item name="android:lineSpacingExtra">5dp</item>
+        <item name="android:textSize">16dp</item>
     </style>
     
     <style name="style_post_property">

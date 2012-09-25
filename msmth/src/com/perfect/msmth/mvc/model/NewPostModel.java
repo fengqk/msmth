@@ -24,7 +24,7 @@ public class NewPostModel extends Model {
         mPostList = postList;
     }
     
-    class UpdateTask extends AsyncTask<Void, Void, List<PostData>> { 
+    private class UpdateTask extends AsyncTask<Void, Void, List<PostData>> { 
         
         private NewPostModel mModel;
         

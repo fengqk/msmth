@@ -7,8 +7,9 @@
         android:id="@id/list_hot_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:divider="@color/gainsboro"
-        android:dividerHeight="1dp"  
+        android:scrollingCache="false"
+        android:fadingEdge="none"
+        android:cacheColorHint="#00000000"
         android:fastScrollEnabled="true" />
     
 </RelativeLayout>

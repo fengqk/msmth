@@ -1,5 +1,7 @@
 package com.perfect.msmth.mvc.data;
 
+import java.util.ArrayList;
+
 import com.perfect.msmth.mvc.Data;
 
 public class PostData extends Data {
@@ -11,6 +13,29 @@ public class PostData extends Data {
     private String mAuthor;
     private String mDate;
     private String mLink;
+    private ArrayList<Attachment> mAttachList;
+    
+    public class Attachment {
+        
+        private String mName;
+        private String mUrl;
+        
+        public String getName() {
+            return mName;
+        }
+        
+        public void setName(String name) {
+            mName = name;
+        }
+        
+        public String getUrl() {
+            return mUrl;
+        }
+        
+        public void setUrl(String url) {
+            mUrl = url;
+        }
+    }
     
     public PostData copy() {
         PostData copy = new PostData();
@@ -22,10 +47,12 @@ public class PostData extends Data {
         copy.mAuthor = mAuthor;
         copy.mDate = mDate;
         copy.mLink = mLink;
+        copy.mAttachList = mAttachList;
         
         return copy;
     }
-    
+ 
+ 
     public String getID() {
         return mID;
     }
@@ -80,5 +107,20 @@ public class PostData extends Data {
 
     public void setLink(String link) {
         mLink = link;
+    }
+    
+    public Attachment newAttachment() {
+        if(mAttachList == null) {
+            mAttachList = new ArrayList<Attachment>();
+        }
+        
+        Attachment att = new Attachment();
+        mAttachList.add(att);
+        
+        return att;
+    }
+    
+    public ArrayList<Attachment> getAttachment() {
+        return mAttachList;
     }
 }

@@ -1,6 +1,7 @@
 package com.perfect.msmth.helper;
 
 import com.perfect.msmth.mvc.data.PostData;
+import com.perfect.msmth.mvc.data.PostData.Attachment;
 import com.perfect.msmth.helper.SmthSpider;
 import com.perfect.msmth.helper.StrHelper;
 
@@ -60,6 +61,13 @@ public class HtmlHelper {
         if(m.find()) { 
             Object[] objects = StrHelper.filterPostContent(m.group(1));
             post.setContent((String)objects[0]);
+            
+            ArrayList<String> imgList = (ArrayList<String>)objects[1];
+            for(int i = 0; i < imgList.size(); ++i) {
+                Attachment att = post.newAttachment();
+                att.setName("image_" + i);
+                att.setUrl(imgList.get(i));
+            }
         }
         
         return post;

@@ -19,6 +19,7 @@
     <item type="id" name="layout_post_head" />
     <item type="id" name="layout_post_body" />
     <item type="id" name="layout_post_content" />
+    <item type="id" name="layout_post_image" />
     <item type="id" name="layout_post_property" />
     <item type="id" name="layout_subject" />
     

@@ -4,7 +4,7 @@
     android:layout_height="wrap_content" >
     
     <!-- board -->
-    <SlidingDrawer 
+    <!-- SlidingDrawer 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:handle="@+id/handle"
@@ -35,14 +35,15 @@
                 android:text="@string/label_login_name" />
         </LinearLayout>
           
-    </SlidingDrawer>
+    </SlidingDrawer -->
     
     <ListView 
         android:id="@id/list_new_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:divider="@color/gainsboro"
-        android:dividerHeight="1dp"  
+        android:scrollingCache="false"
+        android:fadingEdge="none"
+        android:cacheColorHint="#00000000"
         android:fastScrollEnabled="true" />
     
 </RelativeLayout>

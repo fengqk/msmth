@@ -6,6 +6,13 @@ import com.perfect.msmth.helper.HtmlHelper;
 
 import com.perfect.msmth.mvc.data.PostData;
 
+import android.graphics.drawable.Drawable;
+
+import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -54,6 +61,17 @@ public class SmthHelper {
         }
         
         return HtmlHelper.parsePostList(content);
+    }
+    
+    public Drawable getImage(String url) { 
+        Drawable drawable = null;  
+        
+        byte[] bytes = mSpider.getUrlImage(url);
+        if(bytes != null) {
+            drawable = Drawable.createFromStream(new ByteArrayInputStream(bytes), "src");
+        }
+        
+        return drawable;
     }
     
     public String getUsername() {

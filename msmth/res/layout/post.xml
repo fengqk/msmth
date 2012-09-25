@@ -3,34 +3,44 @@
     android:id="@id/layout_post"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp" 
-    android:background="@drawable/post_bg" >
+    android:layout_margin="2dp" >
     
     <RelativeLayout
         android:id="@id/layout_post_head"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_margin="5dp"
+        android:background="@drawable/face_bg" >
+    
+        <ImageView 
+            android:id="@+id/image_post_head" 
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/face_default_m" />
+ 
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@id/layout_post_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/layout_post_head" 
+        android:background="@drawable/post_bg" >
+    
         <!-- post title -->
         <TextView
             android:id="@id/text_post_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="@style/style_post_title" />
-           
-    </RelativeLayout>
-    
-    <RelativeLayout
-        android:id="@id/layout_post_body"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/layout_post_head" >
-    
+        
         <!-- post content -->
         <RelativeLayout
             android:id="@id/layout_post_content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content" 
+            android:layout_below="@id/text_post_title">
             
             <TextView
                 android:id="@id/text_post_content"
@@ -39,9 +49,11 @@
                 android:textAppearance="@style/style_post_content" />
             
             <LinearLayout
-                android:id="@+id/layout_post_image"
+                android:id="@id/layout_post_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/text_post_content"
+                android:paddingLeft="10dp"
                 android:orientation="vertical" >
             </LinearLayout>
         

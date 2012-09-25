@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android" >
     
-    <item android:state_selected="true" android:state_focused="true" >
+      <item android:state_selected="true" android:state_focused="true" >
         <shape>
             <stroke
                 android:width="1dp"
-                android:color="@color/gainsboro"
+                android:color="@color/white"
                 android:dashWidth="5dp" 
                 android:dashGap="3dp" />
            
@@ -23,11 +23,11 @@
     <item>
         <shape>
             <solid 
-                android:color="@color/cornflowerblue"/>
+                android:color="@color/white"/>
             
             <stroke
                 android:width="1dp"
-                android:color="@color/gainsboro" />
+                android:color="@color/white" />
             
             <corners 
                 android:radius="5dp" />

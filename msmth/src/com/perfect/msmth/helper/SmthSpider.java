@@ -2,9 +2,13 @@ package com.perfect.msmth.helper;
 
 import com.perfect.msmth.helper.UtilHelper;
 
+import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.zip.GZIPInputStream;
 
 import org.apache.http.HttpVersion;
@@ -30,6 +34,8 @@ import org.apache.http.params.HttpProtocolParams;
 
 import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
 import org.apache.http.impl.client.DefaultHttpClient;
+
+import android.graphics.drawable.Drawable;
 
 public class SmthSpider {
     
@@ -94,13 +100,41 @@ public class SmthSpider {
                 content = sb.toString();
             } else {
                 content = EntityUtils.toString(httpEntity, ENCODING);
-            }
-            
+            } 
         } catch (Exception e) {
             content = null;
         }
         
         return UtilHelper.toDBC(content);
+    }
+    
+    public byte[] getUrlImage(String url) {
+        ByteArrayOutputStream out = null;  
+        int BUFFER_SIZE = 1024*16;  
+        InputStream inputStream = null;  
+        try{
+            inputStream = new URL(url).openStream();  
+            BufferedInputStream in = new BufferedInputStream(inputStream, BUFFER_SIZE);  
+            out = new ByteArrayOutputStream(BUFFER_SIZE);  
+            int length = 0;
+            byte[] tem = new byte[BUFFER_SIZE];  
+            length = in.read(tem);  
+            while(length != -1){
+                out.write(tem, 0, length);  
+                length = in.read(tem);  
+            }
+            in.close();
+        }catch(Exception e){  
+            e.printStackTrace();
+        }finally{
+            if(inputStream != null){  
+                try{  
+                    inputStream.close();  
+                }catch(Exception e){}  
+            }
+        }
+        
+        return out != null ? out.toByteArray() : null;
     }
     
     public void Destroy() {
