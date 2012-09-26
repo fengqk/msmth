@@ -62,11 +62,12 @@ public class HtmlHelper {
             Object[] objects = StrHelper.filterPostContent(m.group(1));
             post.setContent((String)objects[0]);
             
-            ArrayList<String> imgList = (ArrayList<String>)objects[1];
+            ArrayList<String[]> imgList = (ArrayList<String[]>)objects[1];
             for(int i = 0; i < imgList.size(); ++i) {
                 Attachment att = post.newAttachment();
                 att.setName("image_" + i);
-                att.setUrl(imgList.get(i));
+                att.setSrcUrl(imgList.get(i)[0]);
+                att.setLocUrl(imgList.get(i)[1]);                
             }
         }
         

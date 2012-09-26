@@ -2,6 +2,7 @@ package com.perfect.msmth.adapter;
 
 import com.perfect.msmth.R;
 import com.perfect.msmth.SmthApp;
+import com.perfect.msmth.activity.ImageActivity;
 import com.perfect.msmth.fragment.HomeFragment;
 import com.perfect.msmth.mvc.data.PostData;
 import com.perfect.msmth.mvc.data.PostData.Attachment;
@@ -11,12 +12,14 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.BaseAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
+import android.content.Intent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -124,9 +127,22 @@ public class NewPostAdapter extends BaseAdapter {
                 ImageView imageView = new ImageView(mFragment.getActivity());
                 imageView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
                 imageView.setTag(attachList.get(i));
-                holder.mImageList.addView(imageView);
+
+                imageView.setOnClickListener(new OnClickListener() {
+                    
+                    @Override
+                    public void onClick(View view) {
+                            Intent intent = new Intent();
+                            intent.setClass(view.getContext(), ImageActivity.class);
+                            Attachment attachment = (Attachment)view.getTag();
+                            intent.putExtra("IMAGE_SRC_URL", attachment.getSrcUrl());
+                            intent.putExtra("IMAGE_NAME", attachment.getName());
+                            mFragment.startActivity(intent);
+                    }
+                });
                 
-                imgModel.update(attachList.get(i).getUrl(), imageView);
+                holder.mImageList.addView(imageView);
+                imgModel.update(attachList.get(i).getLocUrl(), imageView);
             }
         }
         

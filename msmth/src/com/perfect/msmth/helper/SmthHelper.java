@@ -35,7 +35,7 @@ public class SmthHelper {
     }
 
     public List<PostData> getNewPostList() {
-        return getNewPostList("Joke");
+        return getNewPostList("FamilyLife");
     }
     
     public List<PostData> getNewPostList(String board) {

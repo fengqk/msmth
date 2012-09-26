@@ -18,7 +18,8 @@ public class PostData extends Data {
     public class Attachment {
         
         private String mName;
-        private String mUrl;
+        private String mLocUrl;
+        private String mSrcUrl;
         
         public String getName() {
             return mName;
@@ -28,12 +29,20 @@ public class PostData extends Data {
             mName = name;
         }
         
-        public String getUrl() {
-            return mUrl;
+        public String getLocUrl() {
+            return mLocUrl;
         }
         
-        public void setUrl(String url) {
-            mUrl = url;
+        public void setLocUrl(String url) {
+            mLocUrl = url;
+        }
+        
+        public String getSrcUrl() {
+            return mSrcUrl;
+        }
+        
+        public void setSrcUrl(String url) {
+            mSrcUrl = url;
         }
     }
     

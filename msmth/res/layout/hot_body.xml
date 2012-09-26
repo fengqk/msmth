@@ -3,13 +3,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
+    <!-- SlidingDrawer 
+        android:id="@id/sliding_hot_group"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:handle="@+id/handle"
+        android:content="@+id/content"
+        android:allowSingleTap="false"
+        android:orientation="horizontal" >
+        
+        <ImageButton 
+            android:id="@id/handle" 
+            android:layout_width="5dp"
+            android:layout_height="match_parent" 
+            android:background="@color/transparent"
+            android:contentDescription="@string/app_name" />
+      
+        <LinearLayout 
+            android:id="@id/content"
+            android:layout_width="match_parent" 
+            android:layout_height="match_parent" 
+            android:background="@color/transparent" />
+
+    </SlidingDrawer -->
+    
     <ListView 
         android:id="@id/list_hot_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scrollingCache="false"
-        android:fadingEdge="none"
-        android:cacheColorHint="#00000000"
-        android:fastScrollEnabled="true" />
+        style="@style/style_post_list" />
     
 </RelativeLayout>

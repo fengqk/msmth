@@ -20,8 +20,7 @@ public class StrHelper {
     public static final String REG_SMTH_POST_AUTHOR = "<a href=\"/user/query/([^<>]+)\">";
     public static final String REG_SMTH_POST_DATE = "<a class=\"plant\">\\d+-([^<>]+)</a>";
     public static final String REG_SMTH_POST_CONTENT = "<div class=\"sp\">(.*?)</div>";
-    public static final String REG_SMTH_POST_IMAGE = "<a target=\"_blank\" href=\"([^<>]+)\">";
-    public static final String REG_SMTH_POST_IMAGE_SMALL = "<img border=\"[^<>]+\" title=\"[^<>]+\" src=\"([^<>]+)\" class=\"[^<>]+\" />";
+    public static final String REG_SMTH_POST_IMAGE = "<a target=\"_blank\" href=\"([^<>]+)\"><img border=\"[^<>]+\" title=\"[^<>]+\" src=\"([^<>]+)\" class=\"[^<>]+\" />";
     
     public static Object[] filterPostContent(String content) {
         if (content == null) {
@@ -38,11 +37,11 @@ public class StrHelper {
         boolean isMainbodyEnd = false;
         sb.append("<br />");
         
-        ArrayList<String> imgList = new ArrayList<String>();
+        ArrayList<String[]> imgList = new ArrayList<String[]>();
         for(String line : lines) {       
-            Matcher m = Pattern.compile(REG_SMTH_POST_IMAGE_SMALL).matcher(line);
+            Matcher m = Pattern.compile(REG_SMTH_POST_IMAGE).matcher(line);
             if(m.find()) {
-                imgList.add(m.group(1));
+                imgList.add(new String[]{m.group(1),m.group(2)});
                 continue;
             }
             

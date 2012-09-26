@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
+
     <!-- home topbar -->
     <include
         android:id="@id/layout_home_topbar"
@@ -14,5 +14,5 @@
     <include
         android:id="@id/layout_home_body"
         layout="@layout/home_body" />
-    
+     
 </LinearLayout>

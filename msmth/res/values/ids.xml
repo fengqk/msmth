@@ -22,6 +22,7 @@
     <item type="id" name="layout_post_image" />
     <item type="id" name="layout_post_property" />
     <item type="id" name="layout_subject" />
+    <item type="id" name="layout_image" />
     
     <!-- text view -->
     <item type="id" name="text_login_name" />
@@ -58,6 +59,7 @@
     <item type="id" name="image_topbar_post" />
     <item type="id" name="image_topbar_send" />
     <item type="id" name="image_topbar_refresh" />
+    <item type="id" name="image_attachment" />
     
     <!-- list view-->
     <item type="id" name="list_hot_post" />
@@ -65,5 +67,9 @@
     
     <!-- spinner -->
     <item type="id" name="spinner_topbar_hot_group" />
+    
+    <!-- sliding -->
+    <item type="id" name="sliding_fav_group" />
+    <item type="id" name="sliding_hot_group" />
     
 </resources>

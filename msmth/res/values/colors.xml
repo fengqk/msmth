@@ -104,9 +104,7 @@
 	<color name="lawngreen">#7CFC00</color>            <!--草绿色 -->  
 	<color name="mediumslateblue">#7B68EE</color>      <!--中暗蓝色 -->  
 	<color name="lightslategray">#778899</color>       <!--亮蓝灰 -->  
-	<color name="lightslategrey">#778899</color>       <!--亮蓝灰 -->  
-	<color name="slategray">#708090</color>            <!--灰石色 -->  
-	<color name="slategrey">#708090</color>            <!--灰石色 -->  
+	<color name="slategray">#708090</color>            <!--灰石色 -->   
 	<color name="olivedrab">#6B8E23</color>            <!--深绿褐色 -->  
 	<color name="slateblue">#6A5ACD</color>            <!--石蓝色 -->  
 	<color name="dimgray">#696969</color>              <!--暗灰色 -->  
@@ -146,5 +144,6 @@
 	<color name="darkblue">#00008B</color>             <!--暗蓝色 -->  
 	<color name="navy">#000080</color>                 <!--海军色 -->
 	<color name="black">#000000</color>                <!--黑色 -->
-	
+	<color name="transparent">#00000000</color>        <!--透明 -->
+	<color name="translucent">#50000000</color>         <!--半透明 -->
 </resources>
