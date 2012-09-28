@@ -8,7 +8,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.widget.TabHost;
@@ -23,7 +22,7 @@ public class MainActivity extends FragmentActivity implements TabContentFactory 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        
+
         initView();
     }
 
@@ -54,7 +53,7 @@ public class MainActivity extends FragmentActivity implements TabContentFactory 
             }
         });
         
-        switchTabHost(getString(R.string.label_navbar_home));
+        switchTabHost(getString(R.string.label_navbar_search));
     }
     
     private void switchTabHost(String tabId){

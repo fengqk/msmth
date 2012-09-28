@@ -2,6 +2,7 @@ package com.perfect.msmth.activity;
 
 import com.perfect.msmth.R;
 import com.perfect.msmth.activity.MainActivity;
+import com.perfect.msmth.helper.SmthHelper;
 
 import android.app.Activity;
 import android.os.Bundle;

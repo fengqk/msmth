@@ -23,7 +23,7 @@ import android.content.Intent;
 import android.animation.LayoutTransition;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
-import android.view.animation.AccelerateInterpolator;
+import android.view.animation.DecelerateInterpolator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -91,7 +91,7 @@ public class NewPostAdapter extends BaseAdapter {
             LayoutTransition transition = new LayoutTransition();
             PropertyValuesHolder pvhAlpha = PropertyValuesHolder.ofFloat("alpha", 0.0f, 1.0f);
             ObjectAnimator appearingAnimator =  (ObjectAnimator) ObjectAnimator.ofPropertyValuesHolder((Object)null, pvhAlpha);
-            appearingAnimator.setInterpolator(new AccelerateInterpolator());
+            appearingAnimator.setInterpolator(new DecelerateInterpolator());
             transition.setAnimator(LayoutTransition.APPEARING, appearingAnimator);
             transition.setStagger(LayoutTransition.APPEARING, 2000);
             ((RelativeLayout)layout.findViewById(R.id.layout_post_body)).setLayoutTransition(transition);

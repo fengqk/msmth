@@ -14,21 +14,4 @@
         android:background="@drawable/topbar_back" 
         android:contentDescription="@string/app_name" />
     
-    <!-- group -->
-    <TextView
-        android:id="@id/text_topbar_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
-    
-    <!-- refresh -->
-    <ImageView
-        android:id="@id/image_topbar_refresh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:clickable="true"
-        android:background="@drawable/topbar_refresh" 
-        android:contentDescription="@string/app_name" />
-    
 </RelativeLayout>

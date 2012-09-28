@@ -13,6 +13,7 @@ public class StrHelper {
     public static final String URL_SMTH_BOARD = "http://m.newsmth.net/board/%s";
     public static final String URL_SMTH_HOT_TOTAL = "http://m.newsmth.net/hot";
     public static final String URL_SMTH_HOT_GROUP = "http://m.newsmth.net/hot/%d";
+    public static final String URL_SMTH_BOARD_LIST = "http://www.btsmth.com/board_list.php";
     
     public static final String REG_SMTH_POST_LIST = "<a href=\"/article/(\\w+)/(\\d+)\">";
     
@@ -23,6 +24,8 @@ public class StrHelper {
     public static final String REG_SMTH_POST_LINK = "";
     public static final String REG_SMTH_POST_CONTENT = "<div class=\"sp\">(.*?)</div>";
     public static final String REG_SMTH_POST_IMAGE = "<a target=\"_blank\" href=\"([^<>]+)\"><img border=\"[^<>]+\" title=\"[^<>]+\" src=\"([^<>]+)\" class=\"[^<>]+\" />";
+    
+    public static final String REG_SMTH_BOARD_LIST = "<option value=\"([^<>]+)\">[^\\s]+ ([^<>]+)</option>";
     
     public static Object[] filterPostContent(String content) {
         if (content == null) {

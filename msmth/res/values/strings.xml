@@ -45,4 +45,7 @@
         <item>电脑技术</item>
     </string-array>
     
+    <string name="label_search_group">选择需要关注的版面</string>
+    <string name="label_hint_search_group">请选择你关注的版面</string>
+    
 </resources>

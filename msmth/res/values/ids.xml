@@ -15,6 +15,11 @@
     <item type="id" name="layout_hot" />
     <item type="id" name="layout_hot_topbar" />
     <item type="id" name="layout_hot_body" />
+    <item type="id" name="layout_search" />
+    <item type="id" name="layout_search_topbar" />
+    <item type="id" name="layout_search_body" />
+    <item type="id" name="layout_search_hint" />
+    
     <item type="id" name="layout_post" />
     <item type="id" name="layout_post_head" />
     <item type="id" name="layout_post_body" />
@@ -27,6 +32,7 @@
     <item type="id" name="layout_topic_topbar" />
     <item type="id" name="layout_topic_body" />
     <item type="id" name="layout_group" />
+    
     
     <!-- text view -->
     <item type="id" name="text_login_name" />
@@ -42,10 +48,12 @@
     <item type="id" name="text_topbar_group" />
     <item type="id" name="text_board_name" />
     <item type="id" name="text_topbar_board" />
+    <item type="id" name="text_search_group" />
     
     <!-- edit text -->
     <item type="id" name="edit_login_name" />
     <item type="id" name="edit_login_pass" />
+    <item type="id" name="edit_search_group" />
     
     <!-- button -->
     <item type="id" name="button_login_enter" />

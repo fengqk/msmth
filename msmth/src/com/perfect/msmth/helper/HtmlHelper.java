@@ -84,7 +84,7 @@ public class HtmlHelper {
         Matcher m = Pattern.compile(StrHelper.REG_SMTH_POST_LIST).matcher(content);
         while(m.find()) {            
             String url = String.format(StrHelper.URL_SMTH_SINGLE_POST, m.group(1), m.group(2));
-            String detail = SmthSpider.getInstance().getUrlContent(url);
+            String detail = SmthSpider.getInstance().getUrlContent(url, "UTF-8");
             if(detail != null) {
                 PostData post = parsePost(detail);
                 post.setLink(String.format(StrHelper.URL_SMTH_POST, m.group(1), m.group(2)));

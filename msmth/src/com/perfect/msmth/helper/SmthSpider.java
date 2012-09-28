@@ -39,7 +39,6 @@ import android.graphics.drawable.Drawable;
 
 public class SmthSpider {
     
-    public static final String ENCODING = "UTF-8";
     public static final String USER_AGENT = "Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.1.4) Gecko/20091016 Firefox/3.5.4";
 
     private DefaultHttpClient httpClient;
@@ -65,7 +64,7 @@ public class SmthSpider {
         httpClient.getParams().setParameter(ClientPNames.HANDLE_REDIRECTS, true);
     }
     
-    public String getUrlContent(String url) {
+    public String getUrlContent(String url, String encoding) {
         HttpGet httpGet = new HttpGet(url);
         httpGet.setHeader("User-Agent", USER_AGENT);
         httpGet.addHeader("Accept-Encoding", "gzip, deflate");
@@ -89,7 +88,7 @@ public class SmthSpider {
             
             if(compressed) {
                 InputStream is = httpEntity.getContent();
-                BufferedReader br = new java.io.BufferedReader(new InputStreamReader(new GZIPInputStream(is), ENCODING));
+                BufferedReader br = new java.io.BufferedReader(new InputStreamReader(new GZIPInputStream(is), encoding));
                 String line;
                 StringBuilder sb = new StringBuilder();
                 while((line = br.readLine()) != null) {
@@ -99,7 +98,7 @@ public class SmthSpider {
                 br.close();
                 content = sb.toString();
             } else {
-                content = EntityUtils.toString(httpEntity, ENCODING);
+                content = EntityUtils.toString(httpEntity, encoding);
             } 
         } catch (Exception e) {
             content = null;

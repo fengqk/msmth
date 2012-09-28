@@ -18,7 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
 import android.view.View.OnClickListener;
-import android.view.animation.AccelerateInterpolator;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -92,7 +92,7 @@ public class HotPostAdapter extends BaseAdapter {
             LayoutTransition transition = new LayoutTransition();
             PropertyValuesHolder pvhAlpha = PropertyValuesHolder.ofFloat("alpha", 0.0f, 1.0f);
             ObjectAnimator appearingAnimator =  (ObjectAnimator) ObjectAnimator.ofPropertyValuesHolder((Object)null, pvhAlpha);
-            appearingAnimator.setInterpolator(new AccelerateInterpolator());
+            appearingAnimator.setInterpolator(new DecelerateInterpolator());
             transition.setAnimator(LayoutTransition.APPEARING, appearingAnimator);
             transition.setStagger(LayoutTransition.APPEARING, 2000);
             ((RelativeLayout)layout.findViewById(R.id.layout_post_body)).setLayoutTransition(transition);

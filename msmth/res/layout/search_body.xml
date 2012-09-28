@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" 
+    android:layout_margin="5dp"
+    android:padding="10dp"
+    android:orientation="vertical" >
+    
+    <!-- search group -->
+    <TextView
+        android:id="@id/text_search_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/label_search_group" />
+    
+    <AutoCompleteTextView
+        android:id="@id/edit_search_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionHint="@string/label_hint_search_group"
+        android:completionThreshold="1"
+        android:dropDownHorizontalOffset="20dp"
+        android:ems="10" >
+ 
+        <requestFocus />
+    </AutoCompleteTextView>
+    
+</LinearLayout>
