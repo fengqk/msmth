@@ -23,6 +23,10 @@
     <item type="id" name="layout_post_property" />
     <item type="id" name="layout_subject" />
     <item type="id" name="layout_image" />
+    <item type="id" name="layout_topic" />
+    <item type="id" name="layout_topic_topbar" />
+    <item type="id" name="layout_topic_body" />
+    <item type="id" name="layout_group" />
     
     <!-- text view -->
     <item type="id" name="text_login_name" />
@@ -34,6 +38,10 @@
     <item type="id" name="text_post_date" />
     <item type="id" name="text_post_author" />
     <item type="id" name="text_post_link" />
+    <item type="id" name="text_group_name" />
+    <item type="id" name="text_topbar_group" />
+    <item type="id" name="text_board_name" />
+    <item type="id" name="text_topbar_board" />
     
     <!-- edit text -->
     <item type="id" name="edit_login_name" />
@@ -64,12 +72,10 @@
     <!-- list view-->
     <item type="id" name="list_hot_post" />
     <item type="id" name="list_new_post" />
-    
-    <!-- spinner -->
-    <item type="id" name="spinner_topbar_hot_group" />
+    <item type="id" name="list_rep_post" />
     
     <!-- sliding -->
-    <item type="id" name="sliding_fav_group" />
+    <item type="id" name="sliding_fav_board" />
     <item type="id" name="sliding_hot_group" />
     
 </resources>

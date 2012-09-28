@@ -3,7 +3,6 @@ package com.perfect.msmth.adapter;
 import com.perfect.msmth.R;
 import com.perfect.msmth.SmthApp;
 import com.perfect.msmth.activity.ImageActivity;
-import com.perfect.msmth.fragment.HotFragment;
 import com.perfect.msmth.mvc.data.PostData;
 import com.perfect.msmth.mvc.data.PostData.Attachment;
 import com.perfect.msmth.mvc.model.ImgPostModel;
@@ -11,10 +10,15 @@ import com.perfect.msmth.mvc.model.ImgPostModel;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.animation.LayoutTransition;
+import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
+import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.LayoutInflater;
 import android.view.View.OnClickListener;
+import android.view.animation.AccelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -22,6 +26,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
 import android.content.Intent;
+import android.content.Context;
 import android.text.Html;
 
 public class HotPostAdapter extends BaseAdapter {
@@ -35,13 +40,11 @@ public class HotPostAdapter extends BaseAdapter {
         public LinearLayout mImageList;
     }
     
-    private HotFragment mFragment;
-    private LayoutInflater mInflater;
+    private Context mContext;
     private List<PostData> mPostList;
     
-    public HotPostAdapter(HotFragment fragment, LayoutInflater inflater) {
-        mFragment = fragment;
-        mInflater = inflater;
+    public HotPostAdapter(Context context) {
+        mContext = context;
     }
     
     public void setData(List<PostData> postList) {
@@ -73,7 +76,7 @@ public class HotPostAdapter extends BaseAdapter {
             layout = (RelativeLayout)convertView;
             holder = (HotPostViewHolder)layout.getTag();
         } else {
-            layout = (RelativeLayout)mInflater.inflate(R.layout.post, null);
+            layout = (RelativeLayout)View.inflate(mContext, R.layout.post, null);
             holder = new HotPostViewHolder();
             
             holder.mTitle = (TextView)layout.findViewById(R.id.text_post_title);
@@ -83,65 +86,75 @@ public class HotPostAdapter extends BaseAdapter {
             holder.mLink = (TextView)layout.findViewById(R.id.text_post_link);
             holder.mImageList = (LinearLayout)layout.findViewById(R.id.layout_post_image);
             
+            layout.findViewById(R.id.layout_post_content).setVisibility(View.GONE);
+            holder.mLink.setVisibility(View.GONE);
+            
+            LayoutTransition transition = new LayoutTransition();
+            PropertyValuesHolder pvhAlpha = PropertyValuesHolder.ofFloat("alpha", 0.0f, 1.0f);
+            ObjectAnimator appearingAnimator =  (ObjectAnimator) ObjectAnimator.ofPropertyValuesHolder((Object)null, pvhAlpha);
+            appearingAnimator.setInterpolator(new AccelerateInterpolator());
+            transition.setAnimator(LayoutTransition.APPEARING, appearingAnimator);
+            transition.setStagger(LayoutTransition.APPEARING, 2000);
+            ((RelativeLayout)layout.findViewById(R.id.layout_post_body)).setLayoutTransition(transition);
+            
             layout.setTag(holder);
         }
         
         PostData post = mPostList.get(position);
         
         if(post.getBoard() != null && post.getTitle() != null) {
-            holder.mTitle.setText(String.format(mFragment.getString(R.string.label_post_rank), position + 1, post.getBoard(), post.getTitle()));
+            holder.mTitle.setText(String.format(mContext.getString(R.string.label_post_rank), position + 1, post.getBoard(), post.getTitle()));
         } else {
-            holder.mTitle.setText("null");
+            holder.mTitle.setText("");
         }
         
         if(post.getContent() != null) {
             holder.mContent.setText(Html.fromHtml(post.getContent()));
         } else {
-            holder.mContent.setText("null");
+            holder.mContent.setText("");
         }
         
         if(post.getDate() != null) {
             holder.mDate.setText(post.getDate());
         } else {
-            holder.mDate.setText("null");
+            holder.mDate.setText("");
         }
         
         if(post.getAuthor() != null) {
-            holder.mAuthor.setText(String.format(mFragment.getString(R.string.label_post_author), post.getAuthor()));
+            holder.mAuthor.setText(String.format(mContext.getString(R.string.label_post_author), post.getAuthor()));
         } else {
-            holder.mAuthor.setText("null");
+            holder.mAuthor.setText("");
         }
         
         if(post.getLink() != null) {
             holder.mLink.setText(post.getLink());
         } else {
-            holder.mLink.setText("null");
+            holder.mLink.setText("");
         }
-        holder.mLink.setVisibility(View.GONE);
         
-        ImgPostModel imgModel = ((SmthApp)mFragment.getActivity().getApplication()).getImgPostModel();
+        holder.mImageList.removeAllViews();
         ArrayList<Attachment> attachList = post.getAttachment();
         if(attachList != null) {
-            holder.mImageList.removeAllViews();
             for(int i =0; i < attachList.size(); ++i) {
-                ImageView imageView = new ImageView(mFragment.getActivity());
+                ImageView imageView = new ImageView(mContext);
                 imageView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
                 imageView.setTag(attachList.get(i));
                 
                 imageView.setOnClickListener(new OnClickListener() {
-                    
                     @Override
                     public void onClick(View view) {
-                            Intent intent = new Intent();
-                            intent.setClass(view.getContext(), ImageActivity.class);
-                            Attachment attachment = (Attachment)view.getTag();
-                            intent.putExtra("IMAGE_SRC_URL", attachment.getSrcUrl());
-                            intent.putExtra("IMAGE_NAME", attachment.getName());
-                            mFragment.startActivity(intent);
+                        Intent intent = new Intent();
+                        intent.setClass(view.getContext(), ImageActivity.class);
+                        Attachment attachment = (Attachment)view.getTag();
+                        intent.putExtra("IMAGE_SRC_URL", attachment.getSrcUrl());
+                        intent.putExtra("IMAGE_NAME", attachment.getName());
+                        mContext.startActivity(intent);
                     }
                 });
                 
                 holder.mImageList.addView(imageView);
+                
+                ImgPostModel imgModel = ((SmthApp)((Activity)mContext).getApplication()).getImgPostModel();
                 imgModel.update(attachList.get(i).getLocUrl(), imageView);
             }
         }

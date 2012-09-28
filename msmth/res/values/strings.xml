@@ -9,7 +9,9 @@
     <string name="label_login_enter">登录</string>
     <string name="label_login_guest">游客</string>
     <string name="label_website_link">还没有帐号？  <a href="http://www.newsmth.net/nForum/#!reg">注册</a></string>
-
+    <string name="label_hint_name">guest</string>
+    <string name="label_hint_pass">******</string>
+    
     <!-- navbar -->
     <string name="label_navbar_home">首页</string>
     <string name="label_navbar_hot">十大</string>

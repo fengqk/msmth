@@ -83,11 +83,76 @@ public class HtmlHelper {
         
         Matcher m = Pattern.compile(StrHelper.REG_SMTH_POST_LIST).matcher(content);
         while(m.find()) {            
-            String url = String.format(StrHelper.URL_SMTH_POST, m.group(1), m.group(2));
+            String url = String.format(StrHelper.URL_SMTH_SINGLE_POST, m.group(1), m.group(2));
             String detail = SmthSpider.getInstance().getUrlContent(url);
             if(detail != null) {
-                postList.add(parsePost(detail));
+                PostData post = parsePost(detail);
+                post.setLink(String.format(StrHelper.URL_SMTH_POST, m.group(1), m.group(2)));
+                
+                postList.add(post);
             }
+        }
+        
+        return postList;
+    }
+    
+    public static List<PostData> parsePostListDirectly(String content) {
+        if(content == null) {
+            return new ArrayList<PostData>();
+        }
+        
+        final List<PostData> postList = new ArrayList<PostData>();
+
+        List<String> titleList = new ArrayList<String>();
+        Matcher m = null;
+        m = Pattern.compile(StrHelper.REG_SMTH_POST_TITLE).matcher(content);
+        if(m.find()) { 
+            titleList.add(m.group(1));
+        }
+        
+        List<String> authorList = new ArrayList<String>();
+        m = Pattern.compile(StrHelper.REG_SMTH_POST_AUTHOR).matcher(content);
+        while(m.find()) { 
+            authorList.add(m.group(1));
+        }
+        
+        List<String> dateList = new ArrayList<String>();
+        m = Pattern.compile(StrHelper.REG_SMTH_POST_DATE).matcher(content);
+        while(m.find()) { 
+            dateList.add(m.group(1));
+        }
+        
+        List<Object[]> contentList = new ArrayList<Object[]>();
+        m = Pattern.compile(StrHelper.REG_SMTH_POST_CONTENT).matcher(content);
+        while(m.find()) { 
+            contentList.add(StrHelper.filterPostContent(m.group(1)));
+        }
+        
+        for(int i = 0; i < authorList.size(); ++i) {
+            PostData post = new PostData();
+            
+            if(i < titleList.size()) {
+                post.setTitle(titleList.get(i));
+            }
+            
+            post.setAuthor(authorList.get(i));
+            
+            if(i < dateList.size()) {
+                post.setDate(dateList.get(i));
+            }
+            
+            if(i < contentList.size()) {
+                post.setContent((String)contentList.get(i)[0]);
+                ArrayList<String[]> imgList = (ArrayList<String[]>)contentList.get(i)[1];
+                for(int j = 0; j < imgList.size(); ++j) {
+                    Attachment att = post.newAttachment();
+                    att.setName("image_" + j);
+                    att.setSrcUrl(imgList.get(j)[0]);
+                    att.setLocUrl(imgList.get(j)[1]);                
+                }
+            }
+            
+            postList.add(post);
         }
         
         return postList;

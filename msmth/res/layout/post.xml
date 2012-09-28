@@ -3,15 +3,13 @@
     android:id="@id/layout_post"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="20dp"
-    android:paddingBottom="20dp" >
+    android:background="@drawable/post_bg" >
     
     <RelativeLayout
         android:id="@id/layout_post_head"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" 
-        android:layout_margin="5dp"
-        android:background="@drawable/face_bg" >
+        android:background="@drawable/post_face_bg" >
     
         <ImageView 
             android:id="@+id/image_post_head" 
@@ -26,8 +24,9 @@
         android:id="@id/layout_post_body"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_toRightOf="@id/layout_post_head" 
-        android:background="@drawable/post_bg" >
+        android:background="@drawable/post_body_bg" >
     
         <!-- post title -->
         <TextView
@@ -41,7 +40,7 @@
             android:id="@id/layout_post_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" 
-            android:layout_below="@id/text_post_title">
+            android:layout_below="@id/text_post_title" >
             
             <TextView
                 android:id="@id/text_post_content"

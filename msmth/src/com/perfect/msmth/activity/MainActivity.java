@@ -11,12 +11,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
-import android.view.Window;
 import android.widget.TabHost;
 import android.widget.TabHost.TabContentFactory;
 import android.widget.TabHost.OnTabChangeListener;
 
-public class MainActivity extends FragmentActivity implements OnTabChangeListener, TabContentFactory {
+public class MainActivity extends FragmentActivity implements TabContentFactory {
     
     private TabHost mTabHost;
     
@@ -25,20 +24,12 @@ public class MainActivity extends FragmentActivity implements OnTabChangeListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        // create tabs
-        createTabHost();
+        initView();
     }
 
     @Override
     public View createTabContent(String tag) {
-        // create tab view
         return TabHelper.createTabContent(this, tag);
-    }
-    
-    @Override
-    public void onTabChanged(String tabId){
-        // switch tabs
-        switchTabHost(tabId);
     }
 
     @Override
@@ -47,12 +38,21 @@ public class MainActivity extends FragmentActivity implements OnTabChangeListene
         return true;
     }
     
+    private void initView() {
+        createTabHost();
+    }
+    
     private void createTabHost(){
         mTabHost = (TabHost)findViewById(android.R.id.tabhost);
         mTabHost.setup();
         
         TabHelper.createTab(this, mTabHost);
-        mTabHost.setOnTabChangedListener(this);
+        mTabHost.setOnTabChangedListener( new OnTabChangeListener() {
+            @Override
+            public void onTabChanged(String tabId){
+                switchTabHost(tabId);
+            }
+        });
         
         switchTabHost(getString(R.string.label_navbar_home));
     }

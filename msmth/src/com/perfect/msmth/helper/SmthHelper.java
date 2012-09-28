@@ -33,10 +33,6 @@ public class SmthHelper {
     private SmthHelper() {
         mSpider = SmthSpider.getInstance();
     }
-
-    public List<PostData> getNewPostList() {
-        return getNewPostList("FamilyLife");
-    }
     
     public List<PostData> getNewPostList(String board) {
         String url = String.format(StrHelper.URL_SMTH_BOARD, board);
@@ -61,6 +57,19 @@ public class SmthHelper {
         }
         
         return HtmlHelper.parsePostList(content);
+    }
+    
+    public List<PostData> getRepPostList(String url) {
+        return getRepPostList(url, 0);
+    }
+    
+    public List<PostData> getRepPostList(String url, int page) {
+        String content = mSpider.getUrlContent(String.format("%s?p=%d", url, page));
+        if(content == null) {
+            return new ArrayList<PostData>();
+        }
+        
+        return HtmlHelper.parsePostListDirectly(content);
     }
     
     public Drawable getImage(String url) { 

@@ -7,30 +7,28 @@ import com.perfect.msmth.mvc.data.PostData;
 import com.perfect.msmth.mvc.data.PostData.Attachment;
 import com.perfect.msmth.mvc.model.ImgPostModel;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.content.Context;
 import android.text.Html;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.BaseAdapter;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.animation.LayoutTransition;
-import android.animation.ObjectAnimator;
-import android.animation.PropertyValuesHolder;
-import android.view.animation.AccelerateInterpolator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class NewPostAdapter extends BaseAdapter {
+public class RepPostAdapter extends BaseAdapter {
 
-    private class NewPostViewHolder {
+    private Context mContext;
+    
+    private class RepPostViewHolder {
         public TextView mTitle;
         public TextView mContent;
         public TextView mDate;
@@ -39,10 +37,9 @@ public class NewPostAdapter extends BaseAdapter {
         public LinearLayout mImageList;
     }
     
-    private Context mContext;
     private List<PostData> mPostList;
     
-    public NewPostAdapter(Context context) {
+    public RepPostAdapter(Context context) {
         mContext = context;
     }
     
@@ -69,14 +66,14 @@ public class NewPostAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         RelativeLayout layout = null;
-        NewPostViewHolder holder = null;
+        RepPostViewHolder holder = null;
         
         if(convertView != null){
             layout = (RelativeLayout)convertView;
-            holder = (NewPostViewHolder)layout.getTag();
+            holder = (RepPostViewHolder)layout.getTag();
         } else {
             layout = (RelativeLayout)View.inflate(mContext, R.layout.post, null);
-            holder = new NewPostViewHolder();
+            holder = new RepPostViewHolder();
             
             holder.mTitle = (TextView)layout.findViewById(R.id.text_post_title);
             holder.mContent = (TextView)layout.findViewById(R.id.text_post_content);
@@ -85,16 +82,7 @@ public class NewPostAdapter extends BaseAdapter {
             holder.mLink = (TextView)layout.findViewById(R.id.text_post_link);
             holder.mImageList = (LinearLayout)layout.findViewById(R.id.layout_post_image);
             
-            layout.findViewById(R.id.layout_post_content).setVisibility(View.GONE);
             holder.mLink.setVisibility(View.GONE);
-            
-            LayoutTransition transition = new LayoutTransition();
-            PropertyValuesHolder pvhAlpha = PropertyValuesHolder.ofFloat("alpha", 0.0f, 1.0f);
-            ObjectAnimator appearingAnimator =  (ObjectAnimator) ObjectAnimator.ofPropertyValuesHolder((Object)null, pvhAlpha);
-            appearingAnimator.setInterpolator(new AccelerateInterpolator());
-            transition.setAnimator(LayoutTransition.APPEARING, appearingAnimator);
-            transition.setStagger(LayoutTransition.APPEARING, 2000);
-            ((RelativeLayout)layout.findViewById(R.id.layout_post_body)).setLayoutTransition(transition);
             
             layout.setTag(holder);
         }
@@ -105,6 +93,7 @@ public class NewPostAdapter extends BaseAdapter {
             holder.mTitle.setText(post.getTitle());
         } else {
             holder.mTitle.setText("");
+            holder.mTitle.setVisibility(View.GONE);
         }
         
         if(post.getContent() != null) {
@@ -130,7 +119,7 @@ public class NewPostAdapter extends BaseAdapter {
         } else {
             holder.mLink.setText("");
         }
-        
+
         holder.mImageList.removeAllViews();
         ArrayList<Attachment> attachList = post.getAttachment();
         if(attachList != null) {
@@ -138,7 +127,7 @@ public class NewPostAdapter extends BaseAdapter {
                 ImageView imageView = new ImageView(mContext);
                 imageView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
                 imageView.setTag(attachList.get(i));
-
+                
                 imageView.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -157,7 +146,7 @@ public class NewPostAdapter extends BaseAdapter {
                 imgModel.update(attachList.get(i).getLocUrl(), imageView);
             }
         }
-        
+
         return layout;
     }
 }

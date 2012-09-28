@@ -12,8 +12,8 @@ public class NewPostModel extends Model {
 
     private List<PostData> mPostList;
     
-    public void update() {
-        new UpdateTask(this).execute();
+    public void update(String board) {
+        new UpdateTask(this).execute(board);
     }
     
     public List<PostData> getPostList() {
@@ -24,7 +24,7 @@ public class NewPostModel extends Model {
         mPostList = postList;
     }
     
-    private class UpdateTask extends AsyncTask<Void, Void, List<PostData>> { 
+    private class UpdateTask extends AsyncTask<String, Void, List<PostData>> { 
         
         private NewPostModel mModel;
         
@@ -38,8 +38,8 @@ public class NewPostModel extends Model {
         }
         
         @Override
-        protected List<PostData> doInBackground(Void... params) {
-            return SmthHelper.getInstance().getNewPostList();
+        protected List<PostData> doInBackground(String... params) {
+            return SmthHelper.getInstance().getNewPostList(params[0]);
         }
 
         @Override

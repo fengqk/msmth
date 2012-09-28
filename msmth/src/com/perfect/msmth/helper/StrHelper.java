@@ -8,6 +8,7 @@ import java.util.regex.Matcher;
 public class StrHelper {
 
     public static final String URL_SMTH = "http://m.newsmth.net";
+    public static final String URL_SMTH_SINGLE_POST = "http://m.newsmth.net/article/%s/single/%s";
     public static final String URL_SMTH_POST = "http://m.newsmth.net/article/%s/%s";
     public static final String URL_SMTH_BOARD = "http://m.newsmth.net/board/%s";
     public static final String URL_SMTH_HOT_TOTAL = "http://m.newsmth.net/hot";
@@ -19,6 +20,7 @@ public class StrHelper {
     public static final String REG_SMTH_POST_BOARD = "<div class=\"menu sp\">[^-]+-([^<>]+)\\(([^<>]+)\\)</div>";
     public static final String REG_SMTH_POST_AUTHOR = "<a href=\"/user/query/([^<>]+)\">";
     public static final String REG_SMTH_POST_DATE = "<a class=\"plant\">\\d+-([^<>]+)</a>";
+    public static final String REG_SMTH_POST_LINK = "";
     public static final String REG_SMTH_POST_CONTENT = "<div class=\"sp\">(.*?)</div>";
     public static final String REG_SMTH_POST_IMAGE = "<a target=\"_blank\" href=\"([^<>]+)\"><img border=\"[^<>]+\" title=\"[^<>]+\" src=\"([^<>]+)\" class=\"[^<>]+\" />";
     

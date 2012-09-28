@@ -5,12 +5,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <!-- home topbar -->
+    <!-- head -->
     <include
         android:id="@id/layout_home_topbar"
         layout="@layout/home_topbar" />
 
-    <!-- home body -->
+    <!-- body -->
     <include
         android:id="@id/layout_home_body"
         layout="@layout/home_body" />

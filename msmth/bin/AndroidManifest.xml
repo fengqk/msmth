@@ -4,7 +4,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="9"
+        android:minSdkVersion="11"
         android:targetSdkVersion="15" />
     
     <uses-permission 
@@ -37,6 +37,10 @@
         <activity 
             android:name=".activity.ImageActivity" 
             android:theme="@style/style_activity_image" />
+        
+        <activity 
+            android:name=".activity.TopicActivity" 
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
         
     </application>
 

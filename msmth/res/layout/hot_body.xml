@@ -3,35 +3,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
-    <!-- SlidingDrawer 
-        android:id="@id/sliding_hot_group"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:handle="@+id/handle"
-        android:content="@+id/content"
-        android:allowSingleTap="false"
-        android:orientation="horizontal" >
-        
-        <ImageButton 
-            android:id="@id/handle" 
-            android:layout_width="5dp"
-            android:layout_height="match_parent" 
-            android:background="@color/transparent"
-            android:contentDescription="@string/app_name" />
-      
-        <LinearLayout 
-            android:id="@id/content"
-            android:layout_width="match_parent" 
-            android:layout_height="match_parent" 
-            android:background="@color/transparent" />
-
-    </SlidingDrawer -->
-    
     <ListView 
         android:id="@id/list_hot_post"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/style_post_list" />
+        android:layout_height="match_parent"
+        style="@style/style_list" />
     
+    <SlidingDrawer 
+        android:id="@id/sliding_hot_group"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:handle="@+id/handle"
+        android:content="@+id/list_hot_group"
+        android:allowSingleTap="false"
+        android:orientation="horizontal" >
+        
+        <View 
+            android:id="@id/handle" 
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+      
+        <ListView 
+	        android:id="@id/list_hot_group"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:padding="10dp"
+	        style="@style/style_list" 
+	        android:dividerHeight="1dp"
+	        android:divider="@color/mintcream"
+	        android:background="@color/azure_alpha"/>
+        
+    </SlidingDrawer>
+   
 </RelativeLayout>

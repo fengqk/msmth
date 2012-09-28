@@ -10,27 +10,28 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
-public class ImageActivity extends Activity implements OnClickListener {
+public class ImageActivity extends Activity{
 
+    private ImgPostModel mPostListModel;
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.image);
 
-        // set view widgets and events
         initView();
-    }
-    
-    @Override
-    public void onClick(View view) {
-        finish();
     }
     
     private void initView() {
         ImageView imageView = (ImageView)findViewById(R.id.image_attachment);
-        imageView.setOnClickListener(this);
+        imageView.setOnClickListener( new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         
-        ImgPostModel imgModel = ((SmthApp)getApplication()).getImgPostModel();
-        imgModel.update(getIntent().getStringExtra("IMAGE_SRC_URL"), imageView);
+        mPostListModel = ((SmthApp)getApplication()).getImgPostModel();
+        mPostListModel.update(getIntent().getStringExtra("IMAGE_SRC_URL"), imageView);
     }
 }

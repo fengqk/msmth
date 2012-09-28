@@ -1,7 +1,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     
     <style name="style_activity_image">
-        <item name="@android:activityOpenEnterAnimation">@anim/open_image</item>
+        <!-- item name="@android:activityOpenEnterAnimation">@anim/open_image</item -->
         <item name="android:windowBackground">@color/translucent</item>  
         <item name="android:windowNoTitle">true</item>  
         <item name="android:windowIsTranslucent">true</item>
@@ -14,8 +14,7 @@
 	    <item name="android:windowAnimationStyle">@+android:style/Animation.Translucent</item>  
     </style> 
     
-    <style name="style_post_list">
-        <item name="android:layout_marginRight">10dp</item>
+    <style name="style_list">
         <item name="android:scrollingCache">false</item>
         <item name="android:fadingEdge">none</item>
         <item name="android:divider">@null</item>
@@ -39,11 +38,6 @@
     <style name="style_post_property">
         <item name="android:textColor">@color/gray</item>
         <item name="android:textSize">14dp</item>
-    </style>
-    
-    <style name="style_post_hot_spinner">
-        <item name="android:headerDividersEnabled">false</item>
-        <item name="android:paddingLeft">5dp</item>
     </style>
     
 </resources>
